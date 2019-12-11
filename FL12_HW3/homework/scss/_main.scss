@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  background-color: white;
+}
+header {
+  background-color: rgb(209, 166, 56);
+  height: 570px;
+  border-bottom-right-radius: 35%;
+  background: {
+    image: url(../img/m-h-day.jpg);
+    size: cover;
+    position: 60% 52%;
+    repeat: no-repeat;
+  }
+}
+.header-wrap {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: {
+    left: 150px;
+  }
+  padding-top: 20px;
+  .landing-logo {
+    display: flex;
+    padding-bottom: 5px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Source Sans Pro', sans-serif;
+      padding-left: 8px;
+    }
+    span {
+      display: block;
+      font-size: 8px;
+      text-align: center;
+    }
+  }
+  p {
+    &.header_heading {
+      font-size: 54px;
+      font-family: 'Source Sans Pro', sans-serif;
+      text-align: left;
+      width: 500px;
+      position: relative;
+      font-weight: 900;
+      line-height: 1;
+      z-index: 1;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 45%;
+        z-index: -1;
+        border-bottom: 37px solid rgb(47, 182, 224);
+      }
+    }
+  }
+  .header_text {
+    font-size: 13px;
+    text-align: left;
+    font-weight: 500;
+    width: 475px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+  div {
+    &:last-child {
+      width: 365px;
+      display: flex;
+      justify-content: space-between;
+      a {
+        padding-top: 9px;
+        color: white;
+      }
+    }
+  }
+}
+button {
+  background-color: rgb(81, 138, 0);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 29px;
+  border-radius: 3px;
+}
+.section {
+  margin:{
+    top: 33px;
+    left: 10px;
+  }
+  &>p{
+    margin: auto;
+    margin-bottom: 33px;
+    width: 350px;
+    position: relative;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+    z-index: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 25px;
+      bottom: 6px;
+      width: 42%;
+      z-index: -1;
+      border-bottom: 38px solid rgb(47, 182, 224);
+    }
+  }
+}
+.section_card_wrap{
+  .section_card {
+    background-color: #343434;
+    color: white;
+    width: 850px;
+    height: 225px;
+    margin: auto;
+    margin-bottom: 23px;
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    .section_card_img {
+      width: 350px;
+      border-radius: 6px;
+    }
+    .section_card_right_container {
+      width: 490px;
+      text-align: center;
+      margin-top: 30px;
+      .section_card_heading {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .section_card_text {
+        text-align: justify;
+        font-size: 13px;
+        margin: {
+          top: 28px;
+          left: 50px;
+          right: 60px;
+        }
+      }
+    }
+  }
+}

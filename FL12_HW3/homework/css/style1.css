@@ -4,13 +4,12 @@
   border: 0; }
 
 body {
-  background-color: white; }
+  background-color: #fff; }
 
 header {
-  background-color: #d1a638;
   height: 766px;
   border-bottom-right-radius: 37% 40%;
-  background-image: url(../img/m-h-day.jpg);
+  background-image: url("../img/m-h-day.jpg");
   background-size: cover;
   background-position: 60% 49%;
   background-repeat: no-repeat; }
@@ -23,8 +22,8 @@ header {
   margin-left: 200px;
   padding-top: 20px; }
   .header-wrap .landing-logo {
-    display: flex;
-    padding-bottom: 5px; }
+    padding-top: 5px;
+    display: flex; }
     .header-wrap .landing-logo img {
       width: 50px;
       height: 50px; }
@@ -33,21 +32,21 @@ header {
       font-weight: 600;
       font-family: 'Source Sans Pro', sans-serif;
       padding-left: 17px;
-      color: #333648; }
+      color: #c0c3ce; }
     .header-wrap .landing-logo span {
       display: block;
       font-size: 10px;
       text-align: center;
-      color: #282b39; }
+      color: #c0c3ce; }
   .header-wrap p.header_heading {
     font-size: 80px;
     font-family: 'Source Sans Pro', sans-serif;
     text-align: left;
-    color: #282b39;
+    color: #2a2d3b;
     width: 700px;
-    position: relative;
     font-weight: 900;
     line-height: 1;
+    position: relative;
     z-index: 1; }
     .header-wrap p.header_heading::after {
       content: "";
@@ -56,11 +55,11 @@ header {
       bottom: 3px;
       width: 48%;
       z-index: -1;
-      border-bottom: 53px solid #2fb6e0; }
+      border-bottom: 53px solid #14a0c7; }
   .header-wrap .header_text {
     font-size: 18px;
     text-align: left;
-    color: #373b4e;
+    color: #2a2d3b;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 500;
     width: 720px;
@@ -72,50 +71,54 @@ header {
     justify-content: space-between; }
     .header-wrap div:last-child a {
       font-size: 22px;
-      padding-top: 13px;
-      color: white;
+      margin-top: 13px;
+      color: #fff;
       font-weight: 600;
       font-family: 'Source Sans Pro', sans-serif; }
+      .header-wrap div:last-child a:hover {
+        color: #699900; }
 
 button {
-  background-color: #699a00;
-  color: white;
+  background-color: #699900;
+  color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 19px;
   font-weight: 600;
   padding: 12px 43px;
   border-radius: 4px;
-  border: 2px solid #699a00; }
+  border: 2px solid #699900; }
   button:hover {
+    cursor: pointer;
     background-color: inherit; }
 
 .section {
   margin-top: 38px;
   margin-left: 10px; }
   .section > p {
+    color: #2a2d3b;
     margin: auto;
     margin-bottom: 40px;
     width: 518px;
-    position: relative;
     text-align: center;
     font-size: 50px;
     font-weight: 600;
     font-family: 'Source Sans Pro', sans-serif;
+    position: relative;
     z-index: 1; }
     .section > p::after {
       content: "";
       position: absolute;
-      right: 25px;
+      left: 269px;
       bottom: 10px;
-      width: 43%;
+      width: 43.5%;
       z-index: -1;
-      border-bottom: 55px solid #2fb6e0; }
+      border-bottom: 55px solid #14a0c7; }
 
 .section_card_wrap {
   margin-bottom: 55px; }
   .section_card_wrap .section_card {
-    background-color: #1b1e2a;
-    color: white;
+    background-color: #21232e;
+    color: #fff;
     width: 1200px;
     height: 305px;
     margin: auto;
@@ -139,7 +142,7 @@ button {
         text-align: justify;
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 17px;
-        color: #bfbfbf;
+        color: #c0c3ce;
         letter-spacing: 1px;
         line-height: 1.5;
         margin-top: 39px;
@@ -147,13 +150,17 @@ button {
         margin-right: 108px; }
       .section_card_wrap .section_card .section_card_right_container .section_link {
         display: block;
-        color: #bfbfbf;
-        padding-top: 31px;
+        color: #c0c3ce;
+        width: 100px;
+        margin: auto;
+        margin-top: 31px;
         font-size: 18px;
         font-family: 'Source Sans Pro', sans-serif; }
+        .section_card_wrap .section_card .section_card_right_container .section_link:hover {
+          color: #699900; }
 
 .section_banner {
-  background-image: linear-gradient(70deg, #65950e, #4c7b69, #2e5cd4);
+  background-image: linear-gradient(45deg, #699900 5%, #46757c 60%, #305dde);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -169,10 +176,13 @@ button {
     margin-left: 150px;
     position: relative;
     z-index: 1;
+    color: #2a2d3b;
     font-size: 31px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 800;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1; }
     .section_banner .section_banner_heading::after {
       content: "";
       position: absolute;
@@ -180,19 +190,19 @@ button {
       bottom: 2px;
       width: 16%;
       z-index: -1;
-      border-bottom: 53px solid #2fb6e0; }
+      border-bottom: 53px solid #14a0c7; }
   .section_banner .section_banner_text {
     margin-left: 150px;
     font-size: 17px;
     font-family: 'Source Sans Pro', sans-serif;
-    color: #d4d4d4;
+    color: #c0c3ce;
     margin-bottom: 10px;
-    font-weight: 400; }
+    font-weight: 600; }
   .section_banner button {
     margin-right: 150px; }
 
 footer.footer {
-  background-color: #1b1e2a;
+  background-color: #21232e;
   height: 260px; }
   footer.footer .footer-wrap {
     height: 100%;
@@ -212,22 +222,22 @@ footer.footer {
         font-weight: 600;
         font-family: 'Source Sans Pro', sans-serif;
         padding-left: 17px;
-        color: #d4d4d4; }
+        color: #c0c3ce; }
       footer.footer .footer-wrap .landing-logo span {
         display: block;
         font-size: 10px;
         text-align: center;
-        color: #d4d4d4; }
+        color: #c0c3ce; }
     footer.footer .footer-wrap .footer_text {
       width: 363px;
       text-align: justify;
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 15px;
-      color: #d4d4d4;
+      color: #c0c3ce;
       letter-spacing: 1px;
       line-height: 1.5;
       margin-top: 39px; }
     footer.footer .footer-wrap .footer-cr {
       font-family: 'Source Sans Pro', sans-serif;
       padding-top: 40px;
-      color: #d4d4d4; }
+      color: #c0c3ce; }

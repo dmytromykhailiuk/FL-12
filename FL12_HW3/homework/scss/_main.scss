@@ -8,6 +8,7 @@
     repeat: no-repeat;
   }
 }
+
 @mixin insertUnderline ($left, $bottom, $width, $borderTrichnes) {
   position: relative;
   z-index: 1;
@@ -58,6 +59,7 @@ body {
 header {
   @include insertImage($mainImage);
 }
+
 .header-wrap {
   height: 570px;
   display: flex;
@@ -124,6 +126,7 @@ button {
     background-color: inherit;
   }
 }
+
 .section {
   margin:{
     top: 38px;

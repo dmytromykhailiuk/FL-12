@@ -11,3 +11,13 @@ $mainImage: url("../img/m-h-night.jpg");
 $bannerLinerGradient: linear-gradient(
   45deg, $buttonBackground 5%, #b56330 60%, #912a53
 );
+$fontMap: (
+  primary: (
+    "Source Sans Pro",
+    sans-serif
+  ),
+  secondary: (
+    "Fresca",
+    sans-serif
+  )
+);

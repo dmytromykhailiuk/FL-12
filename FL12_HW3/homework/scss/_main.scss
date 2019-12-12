@@ -8,27 +8,7 @@
     repeat: no-repeat;
   }
 }
-@mixin landingLogo ($paddingTop) {
-  padding-top: $paddingTop;
-  display: flex;
-  img {
-    width: 50px;
-    height: 50px;
-  }
-  p {
-    font-size: 25px;
-    font-weight: 600;
-    font-family: 'Source Sans Pro', sans-serif;
-    padding-left: 17px;
-    color: $textSecondaryColor;
-  }
-  span {
-    display: block;
-    font-size: 10px;
-    text-align: center;
-    color: $textSecondaryColor;
-  }
-}
+
 @mixin insertUnderline ($left, $bottom, $width, $borderTrichnes) {
   position: relative;
   z-index: 1;
@@ -40,6 +20,32 @@
     width: $width;
     z-index: -1;
     border-bottom: $borderTrichnes solid $colorUnderline;
+  }
+}
+@mixin landingLogo ($paddingTop, $textColor) {
+  padding-top: $paddingTop;
+  display: flex;
+  font-family: map-get($fontMap, "secondary");
+  align-items: flex-start;
+  align-content: center;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  p {
+    font-size: 25px;
+    font-weight: 600;
+    padding-left: 17px;
+    line-height: 32px;
+    color: $textColor;
+    span {
+      font-family: map-get($fontMap, "secondary");
+      display: block;
+      font-size: 10px;
+      text-align: center;
+      color: $textColor;
+      line-height: 11px;
+    }
   }
 }
 * {
@@ -64,12 +70,12 @@ header {
   }
   padding-top: 20px;
   .landing-logo {
-    @include landingLogo (5px);
+    @include landingLogo (5px, $textMainColor);
   }
   p {
     &.header_heading {
       font-size: 80px;
-      font-family: 'Source Sans Pro', sans-serif;
+      font-family: map-get($fontMap, 'primary');
       text-align: left;
       color: $textMainColor;
       width: 700px;
@@ -82,7 +88,7 @@ header {
     font-size: 18px;
     text-align: left;
     color: $textMainColor;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: map-get($fontMap, "secondary");
     font-weight: 500;
     width: 720px;
     line-height: 1.5;
@@ -98,7 +104,7 @@ header {
         margin-top: 13px;
         color: $textTertiaryColor;
         font-weight: 600;
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: map-get($fontMap, 'primary');
         &:hover {
           color: $buttonBackground;
         }
@@ -109,7 +115,7 @@ header {
 button {
   background-color: $buttonBackground;
   color: $textTertiaryColor;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: map-get($fontMap, 'primary');
   font-size: 19px;
   font-weight: 600;
   padding: 12px 43px;
@@ -120,6 +126,7 @@ button {
     background-color: inherit;
   }
 }
+
 .section {
   margin:{
     top: 38px;
@@ -133,7 +140,7 @@ button {
     text-align: center;
     font-size: 50px;
     font-weight: 600;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: map-get($fontMap, 'primary');
     @include insertUnderline (269px, 10px, 43.5%, 55px);
   }
 }
@@ -159,13 +166,13 @@ button {
       text-align: center;
       margin-top: 47px;
       .section_card_heading {
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: map-get($fontMap, 'primary');
         font-size: 28px;
         font-weight: 600;
       }
       .section_card_text {
         text-align: justify;
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family:  map-get($fontMap, 'secondary');
         font-size: 17px;
         color: $textSecondaryColor;
         letter-spacing: 1px;
@@ -183,7 +190,7 @@ button {
         margin: auto;
         margin-top: 31px;
         font-size: 18px;
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: map-get($fontMap, 'primary');
         &:hover {
           color: $buttonBackground;
         }
@@ -210,7 +217,7 @@ button {
     z-index: 1;
     color: $textMainColor;
     font-size: 31px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: map-get($fontMap, 'primary');
     font-weight: 800;
     margin-bottom: 10px;
     @include insertUnderline (123px, 2px, 16%, 53px);
@@ -218,12 +225,13 @@ button {
   .section_banner_text {
     margin-left: 150px;
     font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: map-get($fontMap, 'secondary');
     color: $textSecondaryColor;
     margin-bottom: 10px;
     font-weight: 600;
   }
   button {
+    @extend button;
     margin-right: 150px;
   }
 }
@@ -240,12 +248,12 @@ footer.footer {
     }
     align-items: center;
     .landing-logo{
-      @include landingLogo (40px);
+      @include landingLogo (40px, $textSecondaryColor);
     }
     .footer_text {
       width: 363px;
       text-align: justify;
-      font-family: 'Source Sans Pro', sans-serif;
+      font-family: map-get($fontMap, 'secondary');
       font-size: 15px;
       color: $textSecondaryColor;
       letter-spacing: 1px;
@@ -255,7 +263,7 @@ footer.footer {
       }
     }
     .footer-cr {
-      font-family: 'Source Sans Pro', sans-serif;
+      font-family: map-get($fontMap, 'secondary');
       padding-top: 40px;
       color: $textSecondaryColor;
     }

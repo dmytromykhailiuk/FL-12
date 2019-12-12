@@ -11,3 +11,13 @@ $mainImage: url("../img/m-h-day.jpg");
 $bannerLinerGradient: linear-gradient(
   45deg, $buttonBackground 5%, #46757c 60%, #305dde
 );
+$fontMap: (
+  primary: (
+    "Source Sans Pro",
+    sans-serif
+  ),
+  secondary: (
+    "Hind",
+    sans-serif
+  )
+);

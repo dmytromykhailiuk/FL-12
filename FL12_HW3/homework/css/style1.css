@@ -23,24 +23,29 @@ header {
   padding-top: 20px; }
   .header-wrap .landing-logo {
     padding-top: 5px;
-    display: flex; }
+    display: flex;
+    font-family: "Hind", sans-serif;
+    align-items: flex-start;
+    align-content: center; }
     .header-wrap .landing-logo img {
       width: 50px;
       height: 50px; }
     .header-wrap .landing-logo p {
       font-size: 25px;
       font-weight: 600;
-      font-family: 'Source Sans Pro', sans-serif;
       padding-left: 17px;
-      color: #c0c3ce; }
-    .header-wrap .landing-logo span {
-      display: block;
-      font-size: 10px;
-      text-align: center;
-      color: #c0c3ce; }
+      line-height: 32px;
+      color: #2a2d3b; }
+      .header-wrap .landing-logo p span {
+        font-family: "Hind", sans-serif;
+        display: block;
+        font-size: 10px;
+        text-align: center;
+        color: #2a2d3b;
+        line-height: 11px; }
   .header-wrap p.header_heading {
     font-size: 80px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     text-align: left;
     color: #2a2d3b;
     width: 700px;
@@ -60,7 +65,7 @@ header {
     font-size: 18px;
     text-align: left;
     color: #2a2d3b;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Hind", sans-serif;
     font-weight: 500;
     width: 720px;
     line-height: 1.5;
@@ -74,14 +79,14 @@ header {
       margin-top: 13px;
       color: #fff;
       font-weight: 600;
-      font-family: 'Source Sans Pro', sans-serif; }
+      font-family: "Source Sans Pro", sans-serif; }
       .header-wrap div:last-child a:hover {
         color: #699900; }
 
-button {
+button, .section_banner button {
   background-color: #699900;
   color: #fff;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 19px;
   font-weight: 600;
   padding: 12px 43px;
@@ -102,7 +107,7 @@ button {
     text-align: center;
     font-size: 50px;
     font-weight: 600;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     position: relative;
     z-index: 1; }
     .section > p::after {
@@ -135,12 +140,12 @@ button {
       text-align: center;
       margin-top: 47px; }
       .section_card_wrap .section_card .section_card_right_container .section_card_heading {
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: "Source Sans Pro", sans-serif;
         font-size: 28px;
         font-weight: 600; }
       .section_card_wrap .section_card .section_card_right_container .section_card_text {
         text-align: justify;
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: "Hind", sans-serif;
         font-size: 17px;
         color: #c0c3ce;
         letter-spacing: 1px;
@@ -155,7 +160,7 @@ button {
         margin: auto;
         margin-top: 31px;
         font-size: 18px;
-        font-family: 'Source Sans Pro', sans-serif; }
+        font-family: "Source Sans Pro", sans-serif; }
         .section_card_wrap .section_card .section_card_right_container .section_link:hover {
           color: #699900; }
 
@@ -178,7 +183,7 @@ button {
     z-index: 1;
     color: #2a2d3b;
     font-size: 31px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-weight: 800;
     margin-bottom: 10px;
     position: relative;
@@ -194,7 +199,7 @@ button {
   .section_banner .section_banner_text {
     margin-left: 150px;
     font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Hind", sans-serif;
     color: #c0c3ce;
     margin-bottom: 10px;
     font-weight: 600; }
@@ -213,31 +218,36 @@ footer.footer {
     align-items: center; }
     footer.footer .footer-wrap .landing-logo {
       padding-top: 40px;
-      display: flex; }
+      display: flex;
+      font-family: "Hind", sans-serif;
+      align-items: flex-start;
+      align-content: center; }
       footer.footer .footer-wrap .landing-logo img {
         width: 50px;
         height: 50px; }
       footer.footer .footer-wrap .landing-logo p {
         font-size: 25px;
         font-weight: 600;
-        font-family: 'Source Sans Pro', sans-serif;
         padding-left: 17px;
+        line-height: 32px;
         color: #c0c3ce; }
-      footer.footer .footer-wrap .landing-logo span {
-        display: block;
-        font-size: 10px;
-        text-align: center;
-        color: #c0c3ce; }
+        footer.footer .footer-wrap .landing-logo p span {
+          font-family: "Hind", sans-serif;
+          display: block;
+          font-size: 10px;
+          text-align: center;
+          color: #c0c3ce;
+          line-height: 11px; }
     footer.footer .footer-wrap .footer_text {
       width: 363px;
       text-align: justify;
-      font-family: 'Source Sans Pro', sans-serif;
+      font-family: "Hind", sans-serif;
       font-size: 15px;
       color: #c0c3ce;
       letter-spacing: 1px;
       line-height: 1.5;
       margin-top: 39px; }
     footer.footer .footer-wrap .footer-cr {
-      font-family: 'Source Sans Pro', sans-serif;
+      font-family: "Hind", sans-serif;
       padding-top: 40px;
       color: #c0c3ce; }

@@ -12,8 +12,8 @@
     <a name = "home"></a>
     <div class="top-header">
       <div class="landing-logo">FRONT-END LAB</div>
-      <nav>
-        <ul>
+      <nav class="navigation">
+        <ul class="nav-list">
           <li><a href="#home">Home</a></li>
           <li><a href="#contactsAndAbout">About</a></li>
           <li><a href="#gallery">Gallery</a></li>
@@ -22,9 +22,9 @@
       </nav>
     </div>
     <div class="header-wrap">
-      <h1>Hello! This is Front-end Lab.</h1>
-      <p>EPAM Front-end Lab</p>
-      <button class="discover-btn" type="button" name="button">DISCOVER MORE</button>
+        <h1>Hello! This is Front-end Lab.</h1>
+        <p>EPAM Front-end Lab</p>
+        <button class="discover-btn" type="button" name="button">DISCOVER MORE</button>
     </div>
   </header>
   <main>
@@ -54,6 +54,7 @@
           Continue Reading
         </button>
       </article>
+      <hr noshade color="#ddd" size="3">
     </section>
     <section>
       <img src="img/blog-image2.jpg" alt="blog-image2">
@@ -80,6 +81,7 @@
           Continue Reading
         </button>
       </article>
+      <hr noshade color="#ddd" size="3">
     </section>
     <section>
       <img src="img/blog-image3.jpg" alt="blog-image3">
@@ -106,6 +108,7 @@
           Continue Reading
         </button>
       </article>
+      <hr noshade color="#ddd" size="3">
     </section>
     <section>
       <img src="img/blog-image4.jpg" alt="blog-image4">
@@ -132,8 +135,9 @@
           Continue Reading
         </button>
       </article>
+      <hr noshade color="#ddd" size="3">
     </section>
-    <section>
+    <section class="last-section">
       <img src="img/blog-image3.jpg" alt="blog-image3">
       <h2>Vestibulum vel mauris nec ex tempus</h2>
       <article>
@@ -162,28 +166,30 @@
   </main>
   <footer>
     <a name = "contactsAndAbout"></a>
-    <div class="about-us">
-      <h2>EPAM LAB</h2>
-      <p class="footer_text">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-        sed diam nonumy eirmod tempor invidunt ut labore et
-        dolore magna aliquyam erat, sed diam voluptua.
-      </p>
-      <span class="footer-cr">
-        &copy; 2019 by PEAKS hiking club
-      </span>
-    </div>
-    <div class="contact-us">
-      <h2>Talk to us</h2>
-      <address class="address">
-        512 Delicious Street, San Francisco, CA 10880
-      </address>
-      <p class="phone-number">
-        <a href="tel:010-020-0990">010-020-0990</a>
-      </p>
-      <p class="email">
-        <a href="mailto:info@company.com">info@company.com</a>
-      </p>
+    <div class="footer-wrap">
+      <div class="about-us">
+        <h2>EPAM LAB</h2>
+        <p class="footer_text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+          sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua.
+        </p>
+        <span class="footer-cr">
+          &copy; 2019 by PEAKS hiking club
+        </span>
+      </div>
+      <div class="contact-us">
+        <h2>Talk to us</h2>
+        <address class="address">
+          512 Delicious Street, San Francisco, CA 10880
+        </address>
+        <p class="phone-number">
+          <a href="tel:010-020-0990">010-020-0990</a>
+        </p>
+        <p class="email">
+          <a href="mailto:info@company.com">info@company.com</a>
+        </p>
+      </div>
     </div>
   </footer>
 </body>

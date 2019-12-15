@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   border: 0;
-  scroll-behavior: smooth;
 }
 .header {
   height: 100vh;
   width: 100%;
   margin-bottom: 20px;
+  font-family: 'Merriweather', serif;
 }
 .header .top-header {
   display: flex;
@@ -16,13 +16,13 @@
   height: 80px;
 }
 .header .top-header .landing-logo {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: #333;
 }
 .header .top-header .navigation {
-  width: 305px;
+  width: 325px;
 }
 .header .top-header .navigation .nav-list {
   display: flex;
@@ -32,7 +32,7 @@
 .header .top-header .navigation .nav-list a {
   text-decoration: none;
   color: rgb(95, 95, 95);
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 1px;
 }
@@ -54,7 +54,7 @@
 }
 .header .header-wrap h1 {
   color: white;
-  font-size: 64px;
+  font-size: 55px;
   padding-top: 20%;
   padding-bottom: 1.6%;
 }
@@ -66,14 +66,15 @@
 }
 .header .header-wrap .discover-btn {
   margin-top: 3.1%;
-  width: 141px;
-  height: 40px;
-  font-size: 10.4px;
-  border-radius: 20px;
+  width: 152px;
+  height: 42px;
+  font-size: 11px;
+  border-radius: 21px;
   background-color: white;
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
+  font-family: 'Merriweather', serif;
 }
 .header .header-wrap .discover-btn:hover{
   background-color: #cdcdcd;
@@ -81,6 +82,7 @@
 main {
   background-color: white;
   padding-top: 10px;
+  font-family: 'Lora', serif;
 }
 section, .footer-wrap {
   width: 69%;
@@ -99,7 +101,9 @@ section > img {
   margin-bottom: 30px;
 }
 section h2 {
-  font-size: 30px;
+  font-family: 'Merriweather', serif;
+  font-size: 27.7px;
+  letter-spacing: 1px;
 }
 section .info-section, section .info-section .person-info {
   display: flex;
@@ -114,7 +118,7 @@ section .info-section .date-info {
 }
 section .info-section{
   margin-top: 17px;
-  font-size: 18px;
+  font-size: 15px;
   color: #555;
 }
 section .info-section .person-info .person-avatar {
@@ -124,36 +128,41 @@ section .info-section .person-info .person-avatar {
 }
 section .section-text {
   padding: 20px 0;
-  font-size: 1.15rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.7;
   color: #787878;
 }
 section .read-more {
+  font-family: 'Merriweather', serif;
   background-color: white;
-  border: solid 1.3px #ddd;
+  border: solid 1.3px #eee;
   color: #989898;
-  width: 193px;
+  width: 190px;
   height: 49px;
   border-radius: 25.5px;
-  font-size: 14.4px;
+  font-size: 13.75px;
   font-weight: 600;
   letter-spacing: 0.7px;
   margin-top: 22px;
   margin-bottom: 75px;
   cursor: pointer;
 }
+section .read-more:hover {
+  background-color: #eee;
+}
 footer {
   background-color: #000;
   padding-top: 85px;
   padding-bottom: 85px;
+  font-family: 'Lora', serif;
 }
 footer .footer-wrap {
   color: white;
   display: flex;
   color: #888;
   justify-content: space-between;
-  font-size: 17px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.7;
 }
 footer .footer-wrap .about-us {
   width: 44%;
@@ -172,7 +181,8 @@ footer .footer-wrap .contact-us .address, footer .footer-wrap .contact-us p a {
   padding-bottom: 10px;
 }
 footer .footer-wrap .about-us h2, footer .footer-wrap .contact-us h2 {
-  font-size: 30px;
+  font-size: 26px;
   padding-bottom: 10px;
   color: white;
+  font-family: 'Merriweather', serif;
 }

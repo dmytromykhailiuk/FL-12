@@ -19,7 +19,7 @@
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 3px;
-  color: #333;
+  color: #000;
 }
 .header .top-header .navigation {
   width: 325px;
@@ -31,13 +31,13 @@
 }
 .header .top-header .navigation .nav-list a {
   text-decoration: none;
-  color: rgb(95, 95, 95);
+  color: #777;
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 1px;
 }
 .header .top-header .navigation .nav-list a:hover {
-  color: #eed37b;
+  color: #bfba55;
 }
 .header .header-wrap {
   background: linear-gradient( 90deg, rgba(0, 0, 0, 0.85) 30%,
@@ -49,17 +49,16 @@
   background-position: center 0%;
   height: 92.3vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 .header .header-wrap h1 {
-  color: white;
+  color: #FFFFFF;
   font-size: 55px;
   padding-top: 20%;
   padding-bottom: 1.6%;
 }
 .header .header-wrap p {
-  color: #ad9a35;
+  color: #bfba55;
   font-size: 11px;
   letter-spacing: 2px;
   font-weight: 600;
@@ -70,7 +69,7 @@
   height: 42px;
   font-size: 11px;
   border-radius: 21px;
-  background-color: white;
+  background-color: #FFFFFF;
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
@@ -80,7 +79,7 @@
   background-color: #cdcdcd;
 }
 main {
-  background-color: white;
+  background-color: #FFFFFF;
   padding-top: 10px;
   font-family: 'Lora', serif;
 }
@@ -119,7 +118,7 @@ section .info-section .date-info {
 section .info-section{
   margin-top: 17px;
   font-size: 15px;
-  color: #555;
+  color: #777;
 }
 section .info-section .person-info .person-avatar {
   width: 50px;
@@ -130,13 +129,13 @@ section .section-text {
   padding: 20px 0;
   font-size: 1rem;
   line-height: 1.7;
-  color: #787878;
+  color: #777;
 }
 section .read-more {
   font-family: 'Merriweather', serif;
-  background-color: white;
+  background-color: #FFFFFF;
   border: solid 1.3px #eee;
-  color: #989898;
+  color: #777;
   width: 190px;
   height: 49px;
   border-radius: 25.5px;
@@ -157,9 +156,9 @@ footer {
   font-family: 'Lora', serif;
 }
 footer .footer-wrap {
-  color: white;
+  color: #FFFFFF;
   display: flex;
-  color: #888;
+  color: #777;
   justify-content: space-between;
   font-size: 15px;
   line-height: 1.7;
@@ -177,12 +176,12 @@ footer .footer-wrap .contact-us .address, footer .footer-wrap .contact-us p a {
   display: block;
   font-style: normal;
   text-decoration: none;
-  color: #888;
+  color: #777;
   padding-bottom: 10px;
 }
 footer .footer-wrap .about-us h2, footer .footer-wrap .contact-us h2 {
   font-size: 26px;
   padding-bottom: 10px;
-  color: white;
+  color: #FFFFFF;
   font-family: 'Merriweather', serif;
 }

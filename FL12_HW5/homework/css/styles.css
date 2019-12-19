@@ -5,12 +5,23 @@
   --link--hover: #1f52a4;
   --bg-footer-color: #024161;
 }
+
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+
 *{
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: roboto;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background-color: #0b192f;
+  font-size: 2em;
 }
 .post-1 {
 	background: #9d27b0;
@@ -26,4 +37,191 @@ body {
 }
 .post-5 {
 	background: #2d95bb;
+}
+.wraper {
+  width: 98%;
+  margin: 0 auto;
+}
+.header-wrap {
+  margin-bottom: 1.25vw;
+}
+.header-wrap .top-content {
+  background-color: #024161;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25vw;
+}
+.header-wrap .top-content .hamburger-icon {
+  display: none;
+}
+.header-wrap .top-content .logo p {
+  font-size: 3vw;
+  font-weight: 200;
+  margin: 25px 0 25px 25px;
+}
+.header-wrap .top-content .logo span {
+  color: #9d27b0;
+  font-weight: 300;
+}
+.header-wrap .top-content .navigation {
+  margin-right: 75px;
+  text-align: center;
+}
+.header-wrap .top-content .navigation .nav-list {
+  list-style: none;
+
+}
+.header-wrap .top-content .navigation .nav-list .list-item {
+  display: inline-block;
+  padding: 0 5px 0 5px;
+}
+.header-wrap .top-content .navigation .nav-list .list-item a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3vw;
+  font-weight: 400;
+  padding: 40px 15px 40px 15px;
+  width: 100%;
+}
+.header-wrap .top-content .navigation .nav-list .list-item a:hover {
+  background-color: #1f52a4;
+}
+
+.header-wrap .bottom-content {
+  background-image: url("../img/post0.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 36.1vw;
+  position: relative;
+}
+.header-wrap .bottom-content .botom-content-wrap {
+  position: absolute;
+  left: 3vw;
+  bottom: 4vw;
+  width: 65%;
+}
+.header-wrap .bottom-content .botom-content-wrap h1 {
+  font-size: 3.6vw;
+  font-weight: 300;
+  margin-bottom: 1.7vw;
+}
+.header-wrap .bottom-content .botom-content-wrap p {
+  font-size: 1.1vw;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.main .main-wrap {
+  display: grid;
+  grid-template-columns: 75% auto;
+  grid-column-gap: 1.55vw;
+}
+.main .main-wrap .article {
+  display: grid;
+  grid-template-columns: 49.75% auto;
+  grid-template-rows: 24.75vw
+}
+.main .main-wrap .article.reverse {
+  grid-template-columns: 50.25% auto;
+}
+.main .main-wrap .article.reverse .post{
+  order: -1;
+}
+.main .main-wrap .article .post .post-wrap {
+  margin: 1.9vw 4.3vw 0 3.3vw;
+}
+.main .main-wrap .article.reverse .post .post-wrap {
+  margin: 1.9vw 3.3vw 0 4.3vw;
+  text-align: right;
+}
+.main .main-wrap .article .post .post-wrap h2 {
+  font-size: 4.1vw;
+  font-weight: 200;
+  margin-bottom: 1vw;
+}
+.main .main-wrap .article .post .post-wrap p {
+  font-size: 1.3vw;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.4);
+}
+.main .main-wrap .article .post {
+  position: relative;
+}
+.article-date {
+  position: absolute;
+  right: 1.3vw;
+  top: 3.3%;
+  color: rgba(255,255,255,0.2);
+  font-size: 4vw;
+  font-weight: 300;
+}
+.article.reverse .article-date {
+  left: 1.3vw;
+}
+.article-date span {
+  display: block;
+  font-size: 2.5vw;
+  font-weight: 300;
+}
+.post-5 .post-wrap {
+  padding-right: 4%;
+  padding-top: 1.9vw;
+  padding-bottom: 2.4vw;
+}
+.main .main-wrap .article .post-5 .post-wrap {
+  margin: 0 4.3vw 0 3.3vw;
+}
+.main .main-wrap .article.last {
+  display: block;
+}
+.aside-news .aside {
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 1.25vw;
+}
+.aside-news .aside .aside-text {
+  padding: 1.9vw 3.3vw 3.3vw 3.3vw;
+}
+.aside-news .aside .aside-text h2 {
+  font-size: 1.9vw;
+  font-weight: 400;
+  margin-bottom: 1vw;
+}
+.aside-news .aside .aside-text p {
+  font-size: 1.13vw;
+  font-weight: 400;
+  margin-bottom: 1vw;
+  line-height: 1.75;
+}
+.article .image-article img {
+  display: block;
+  position: relative;
+  z-index: -1;
+}
+.article .image-article:hover {
+  background-color: #9d27b07f;
+  cursor: pointer;
+}
+.article .post:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.3);
+}
+.footer {
+  margin-top: 1vw;
+  background-color: #024161;
+  padding: 2.5vw 2.25vw;
+}
+.footer .footer-wraper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.13vw;
+  font-weight: 200;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.3);
+}
+.footer .footer-wraper .designed-by {
+  width: 11%;
 }

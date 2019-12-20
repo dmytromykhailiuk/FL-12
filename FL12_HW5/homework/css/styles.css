@@ -1,18 +1,7 @@
-:root {
-  --bg-color--dark: #0b192f;
-  --bg-color--header: #024161;
-  --link: #fff;
-  --link--hover: #1f52a4;
-  --bg-footer-color: #024161;
-}
-
-
 img {
   width: 100%;
   height: 100%;
 }
-
-
 *{
   margin: 0;
   padding: 0;
@@ -21,7 +10,6 @@ body {
   font-family: "Roboto", sans-serif;
   color: #fff;
   background-color: #0b192f;
-  font-size: 2em;
 }
 .post-1 {
 	background: #9d27b0;
@@ -39,24 +27,27 @@ body {
 	background: #2d95bb;
 }
 .wraper {
-  width: 98%;
+  width: 1370px;
   margin: 0 auto;
+  margin-bottom: 22px;
 }
 .header-wrap {
-  margin-bottom: 1.25vw;
+  margin-bottom: 22px;
 }
 .header-wrap .top-content {
   background-color: #024161;
+  margin-bottom: 22px;
+}
+.header-wrap .top-content .logo-with-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.25vw;
 }
 .header-wrap .top-content .hamburger-icon {
   display: none;
 }
 .header-wrap .top-content .logo p {
-  font-size: 3vw;
+  font-size: 41px;
   font-weight: 200;
   margin: 25px 0 25px 25px;
 }
@@ -70,7 +61,6 @@ body {
 }
 .header-wrap .top-content .navigation .nav-list {
   list-style: none;
-
 }
 .header-wrap .top-content .navigation .nav-list .list-item {
   display: inline-block;
@@ -80,7 +70,7 @@ body {
   display: block;
   text-decoration: none;
   color: #fff;
-  font-size: 1.3vw;
+  font-size: 18px;
   font-weight: 400;
   padding: 40px 15px 40px 15px;
   width: 100%;
@@ -88,31 +78,29 @@ body {
 .header-wrap .top-content .navigation .nav-list .list-item a:hover {
   background-color: #1f52a4;
 }
-
 .header-wrap .bottom-content {
   background-image: url("../img/post0.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  height: 36.1vw;
+  height: 509px;
   position: relative;
 }
 .header-wrap .bottom-content .botom-content-wrap {
   position: absolute;
-  left: 3vw;
-  bottom: 4vw;
+  left: 44px;
+  bottom: 52px;
   width: 65%;
 }
 .header-wrap .bottom-content .botom-content-wrap h1 {
-  font-size: 3.6vw;
+  font-size: 50px;
   font-weight: 300;
-  margin-bottom: 1.7vw;
+  margin-bottom: 24px;
 }
 .header-wrap .bottom-content .botom-content-wrap p {
-  font-size: 1.1vw;
+  font-size: 15.3px;
   font-weight: 400;
   line-height: 2;
 }
-
 .main .main-wrap {
   display: grid;
   grid-template-columns: 75% auto;
@@ -210,7 +198,7 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 .footer {
-  margin-top: 1vw;
+  margin-top: 1.7vw;
   background-color: #024161;
   padding: 2.5vw 2.25vw;
 }
@@ -224,4 +212,306 @@ body {
 }
 .footer .footer-wraper .designed-by {
   width: 11%;
+}
+
+@media screen and (max-width: 1400px ) {
+  .wraper {
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 0.75vw;
+  }
+  .header-wrap {
+    margin-bottom: 1.25vw;
+  }
+  .header-wrap .top-content {
+    margin-bottom: 1.7vw;
+  }
+  .header-wrap .top-content .logo p {
+    font-size: 3vw;
+  }
+  .header-wrap .top-content .navigation .nav-list .list-item a {
+    font-size: 1.3vw;
+  }
+  .header-wrap .bottom-content {
+    height: 36.75vw;
+  }
+  .header-wrap .bottom-content .botom-content-wrap {
+    left: 3vw;
+    bottom: 4vw;
+  }
+  .header-wrap .bottom-content .botom-content-wrap h1 {
+    font-size: 3.6vw;
+    margin-bottom: 1.7vw;
+  }
+  .header-wrap .bottom-content .botom-content-wrap p {
+    font-size: 1.1vw;
+  }
+  .main .main-wrap {
+    grid-column-gap: 1.55vw;
+  }
+  .main .main-wrap .article {
+    grid-template-rows: 24.75vw
+  }
+  .main .main-wrap .article .post .post-wrap {
+    margin: 1.9vw 4.3vw 0 3.3vw;
+  }
+  .main .main-wrap .article.reverse .post .post-wrap {
+    margin: 1.9vw 3.3vw 0 4.3vw;
+  }
+  .main .main-wrap .article .post .post-wrap h2 {
+    font-size: 4.1vw;
+    margin-bottom: 1vw;
+  }
+  .main .main-wrap .article .post .post-wrap p {
+    font-size: 1.3vw;
+  }
+  .article-date {
+    right: 1.3vw;
+    font-size: 4vw;
+  }
+  .article.reverse .article-date {
+    left: 1.3vw;
+  }
+  .article-date span {
+    font-size: 2.5vw;
+  }
+  .post-5 .post-wrap {
+    padding-top: 1.9vw;
+    padding-bottom: 2.4vw;
+  }
+  .main .main-wrap .article .post-5 .post-wrap {
+    margin: 0 4.3vw 0 3.3vw;
+  }
+  .aside-news .aside {
+    margin-bottom: 1.25vw;
+  }
+  .aside-news .aside .aside-text {
+    padding: 1.9vw 3.3vw 3.3vw 3.3vw;
+  }
+  .aside-news .aside .aside-text h2 {
+    font-size: 1.9vw;
+    margin-bottom: 1vw;
+  }
+  .aside-news .aside .aside-text p {
+    font-size: 1.13vw;
+    margin-bottom: 1vw;
+  }
+  .footer {
+    margin-top: 1.7vw;
+    padding: 2.5vw 2.25vw;
+  }
+  .footer .footer-wraper {
+    font-size: 1.13vw;
+  }
+}
+@media screen and (max-width: 768px ) {
+  .header-wrap .top-content {
+    padding-top: 23px;
+  }
+  .header-wrap .top-content .hamburger-icon {
+    display: block;
+    margin: auto;
+    height: 16px;
+    width: 20px;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+  }
+  .hamburger-icon > span,
+  .hamburger-icon > span::before,
+  .hamburger-icon > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    background-color: #fff;
+  }
+  .hamburger-icon:hover span,
+  .hamburger-icon:hover span::before,
+  .hamburger-icon:hover span::after {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .hamburger-icon > span::before {
+    content: '';
+    top: 7px;
+  }
+  .hamburger-icon > span::after {
+    content: '';
+    top: 14px;
+  }
+  .header-wrap .top-content .logo-with-nav {
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 28px;
+  }
+  .header-wrap .top-content .logo p {
+    margin: 25px 0;
+    font-size: 34px;
+    font-weight: 200;
+  }
+  .header-wrap .top-content .navigation {
+    display: none;
+  }
+  .header-wrap .bottom-content .botom-content-wrap {
+    width: 88%;
+    left: 5vw;
+    bottom: 5vw;
+  }
+  .header-wrap .bottom-content {
+    background-size: cover;
+    background-position: 45%;
+    height: 46.75vw;
+  }
+  .header-wrap .bottom-content .botom-content-wrap h1 {
+    font-size: 6.6vw;
+    font-weight: 200;
+  }
+  .header-wrap .bottom-content .botom-content-wrap p {
+    font-size: 2vw;
+    font-weight: 200;
+    line-height: 2;
+  }
+  .main .main-wrap {
+    grid-template-columns: 63% auto;
+  }
+  .main .main-wrap .article,
+  .main .main-wrap .article.reverse {
+    grid-template-columns: 100%;
+    grid-template-rows: 41.75vw 40.5vw;
+  }
+  .main .main-wrap .article.reverse .post{
+    order: 1;
+  }
+  .main .main-wrap .article .post .post-wrap h2 {
+    font-size: 6.9vw;
+    line-height: 1;
+    margin-top: 3.5vw;
+    margin-bottom: 2.5vw;
+  }
+  .main .main-wrap .article .post .post-wrap p {
+    font-size: 1.9vw;
+  }
+  .article-date {
+    font-size: 6vw;
+  }
+  .article-date span {
+    font-size: 3.3vw;
+    text-align: center;
+  }
+  .main .main-wrap .article.reverse .post .post-wrap {
+    text-align: left;
+  }
+  .article.reverse .article-date {
+    left: auto;
+    right: 1.4vw;
+  }
+  .post-5 .post-wrap {
+    padding-top: 0.1vw;
+    padding-bottom: 20vw;
+    padding-right: 3%;
+  }
+  .main .main-wrap .article .post-5 .post-wrap {
+    margin: 0 4.3vw 0 4.3vw;
+  }
+  .post-5 .article-date {
+    right: 43.75%;
+    top: 73%;
+    margin: auto;
+    display: block;
+  }
+  .aside-news .aside .aside-text h2 {
+    font-size: 4.4vw;
+    line-height: 1;
+    font-weight: 300;
+    margin-bottom: 1.5vw;
+  }
+  .aside-news .aside .aside-text p {
+    font-size: 2.4vw;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  .footer .footer-wraper {
+    display: block;
+    text-align: center;
+    font-size: 1.83vw;
+  }
+  .footer .footer-wraper .designed-by {
+    width: 17%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-wrap .bottom-content {
+    background-position: 48.5%;
+    height: 78.75vw;
+  }
+  .header-wrap .bottom-content .botom-content-wrap h1 {
+    font-size: 10.5vw;
+    line-height: 1;
+    margin-bottom: 3.4vw;
+  }
+  .header-wrap .bottom-content .botom-content-wrap {
+    left: 9vw;
+    bottom: 10vw;
+    width: 75%;
+  }
+  .header-wrap .bottom-content .botom-content-wrap p {
+    font-size: 3.2vw;
+    line-height: 1.75;
+  }
+  .main .main-wrap {
+    display: block;
+  }
+  .main .main-wrap .article, .main .main-wrap .article.reverse {
+    grid-template-rows: 68.75vw 66.5vw;
+  }
+  .main .main-wrap .article .post .post-wrap,
+  .main .main-wrap .article.reverse .post .post-wrap {
+    margin: 7.9vw 14.3vw 0 9.3vw;
+  }
+  .main .main-wrap .article .post .post-wrap h2 {
+    font-size: 9.9vw;
+    margin-bottom: 5.5vw;
+  }
+  .main .main-wrap .article .post .post-wrap p {
+    font-size: 3.26vw;
+  }
+  .article-date {
+    font-size: 13vw;
+    font-weight: 200;
+  }
+  .article-date span {
+    font-size: 6.8vw;
+    font-weight: 200;
+  }
+  .main .main-wrap .article.last .post .post-wrap {
+    margin: 0 14.3vw 0 9.3vw;
+  }
+  .post-5 .post-wrap {
+    padding-right: 0;
+    padding-top: 17px;
+    padding-bottom: 38vw;
+  }
+  .post-5 .article-date {
+    top: 70%;
+  }
+  .aside-news .aside .aside-text h2 {
+    font-size: 5.75vw;
+    margin-bottom: 2.5vw;
+  }
+  .aside-news .aside .aside-text {
+    padding: 3.9vw 11.3vw 5.3vw 7.3vw;
+  }
+  .aside-news .aside .aside-text p {
+    font-size: 3.1vw;
+  }
+  .footer .footer-wraper {
+    font-size: 3.53vw;
+  }
+  .footer .footer-wraper .designed-by {
+    width: 33%;
+  }
+  .footer {
+    padding: 6.5vw 2.25vw;
+  }
 }

@@ -2,6 +2,8 @@ let email, password, oldPassword, newPassword, newPasswordCopy, existingEmail,
 existingPassword, existingOldPassword, existingNewPassword, existingNewPasswordCopy;
 existingEmail = existingPassword = existingOldPassword = existingNewPassword =
 existingNewPasswordCopy = false;
+let minEmailLength = 5;
+let minPasswordLength = 6;
 const usersEmailAddresses = {
   'user@gmail.com': {
     password: 'UserPass'
@@ -16,7 +18,7 @@ while (!existingEmail) {
     alert('Chancelled');
     break;
   } else {
-    if (email.length < 5) {
+    if (email.length < minEmailLength) {
       alert(`I don't know any emails having name length less than 5 symbols`);
     } else if (usersEmailAddresses.hasOwnProperty(email)) {
       existingEmail = true;
@@ -51,7 +53,7 @@ if (existingEmail && existingPassword) {
     }
     while (!existingNewPassword && existingOldPassword) {
       newPassword = prompt('Enter your new password');
-      if (newPassword.length < 6) {
+      if (newPassword.length < minPasswordLength) {
         alert(`It's too short password. Sorry`);
       } else {
         existingNewPassword = true;

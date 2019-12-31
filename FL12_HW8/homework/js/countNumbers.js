@@ -4,7 +4,9 @@ function makeNumber(str) {
 
 function countNumbers(str) {
   const obj = {};
-  makeNumber(str).split('').forEach(el => obj.hasOwnProperty(el) ? obj[el]++ : obj[el] = 1);
+  makeNumber(str).split('').forEach(el => {
+    !obj[el] ? obj[el] = 1 : obj[el]++;
+  });
   return obj;
 }
 

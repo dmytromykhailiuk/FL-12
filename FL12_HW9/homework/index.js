@@ -1,22 +1,28 @@
-const convert = (...arr) => arr.map(el => el === +el ? el + '' : +el);
+function convert (...arr) {
+  const newArr = [];
+  for (let el of arr) {
+    newArr.push(el === +el ? el + '' : +el);
+  }
+  return newArr;
+}
 
-const executeforEach = (arr, f) => {
+function executeforEach (arr, f) {
   for (let el of arr) {
     f(el);
   }
-};
+}
 
-const mapArray = (arr, f) => {
-  const newArr = [];
-  let i = 0;
-  executeforEach(arr, el => {
-    newArr[i] = f(+el);
-    i++;
-  });
-  return newArr;
-};
+function mapArray (arr, f) {
+ const newArr = [];
+ let i = 0;
+ executeforEach(arr, el => {
+   newArr[i] = f(+el);
+   i++;
+ });
+ return newArr;
+}
 
-const filterArray = (arr, f) => {
+function filterArray (arr, f) {
   const newArr = [];
   let i = 0;
   executeforEach(arr, el => {
@@ -26,11 +32,17 @@ const filterArray = (arr, f) => {
     }
   });
   return newArr;
-};
+}
 
-const flipOver = str => str.split('').reverse().join('');
+function flipOver (str) {
+  let newStr = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  return newStr;
+}
 
-const makeListFromRange = arr => {
+function makeListFromRange (arr) {
   const newArr = [];
   let i = 0;
   for (let el = arr[0]; el <= arr[1]; el++) {
@@ -38,9 +50,9 @@ const makeListFromRange = arr => {
     i++;
   }
   return newArr;
-};
+}
 
-const getArrayOfKeys = (arr, pr) => {
+function getArrayOfKeys (arr, pr) {
   const newArr = [];
   let i = 0;
   executeforEach(arr, () => {
@@ -48,9 +60,24 @@ const getArrayOfKeys = (arr, pr) => {
     i++;
   });
   return newArr;
-};
+}
 
-const substitute = arr => {
+function substitute (arr) {
   const limit = 30;
   return mapArray(arr, el => el < limit ? '*' : el);
-};
+}
+
+function getPastDay (date, daysPassed) {
+  const milisecInDay = 86400000;
+  return new Date(date.getTime() - daysPassed * milisecInDay).getDate();
+}
+
+function formatDate (date) {
+  const ancillaryVal = 10;
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hours = date.getHours() < ancillaryVal ? '0' + date.getHours() : date.getHours();
+  const minutes = date.getMinutes() < ancillaryVal ? '0' + date.getMinutes() : date.getMinutes();
+  return `${year}/${month}/${day} ${hours}:${minutes}`;
+}

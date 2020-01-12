@@ -13,13 +13,13 @@ function executeforEach (arr, f) {
 }
 
 function mapArray (arr, f) {
- const newArr = [];
- let i = 0;
- executeforEach(arr, el => {
-   newArr[i] = f(+el);
-   i++;
- });
- return newArr;
+  const newArr = [];
+  let i = 0;
+  executeforEach(arr, el => {
+    newArr[i] = f(+el);
+    i++;
+  });
+  return newArr;
 }
 
 function filterArray (arr, f) {

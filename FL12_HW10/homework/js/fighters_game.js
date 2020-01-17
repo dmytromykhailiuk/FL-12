@@ -42,9 +42,9 @@ function Fighter(properties) {
   }
 }
 
-function setWinBattle(winer, loser) {
-  console.log(`${winer.getName()} has won!`); 
-  winer.addWin();
+function setWinnerOfBattle(winner, loser) {
+  console.log(`${winner.getName()} has won!`); 
+  winner.addWin();
   loser.addLoss();
 }
 
@@ -59,13 +59,13 @@ function battle(fighter1, fighter2) {
   while (!stopBattle) {
     fighter1.attack(fighter2);
     if (!fighter2.getHealth()) {
-      setWinBattle(fighter1, fighter2);
+      setWinnerOfBattle(fighter1, fighter2);
       stopBattle = true;
     }
     if (!stopBattle) {
       fighter2.attack(fighter1);
       if (!fighter1.getHealth()) {
-        setWinBattle(fighter2, fighter1);
+        setWinnerOfBattle(fighter2, fighter1);
         stopBattle = true;
       }
     }

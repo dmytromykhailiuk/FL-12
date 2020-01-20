@@ -1,4 +1,19 @@
-function Fighter(properties) {
+let numberOfFighter = 1;
+const fightersNames = new Set();
+
+function Fighter(properties = {}) {
+  const prop = ['damage', 'strength', 'agility'];
+  const defHp = 100;
+  properties.hp = properties.hp === undefined || properties.hp <= 0 ? defHp : properties.hp;
+  if (properties.name === undefined || fightersNames.has(properties.name)) {
+    properties.name = `fighter${numberOfFighter}`;
+    fightersNames.add(properties.name);
+    numberOfFighter++;
+  }
+  prop.forEach(el => {
+    properties[el] = properties[el] <= 0 || properties[el] === undefined ? properties[el] = 10 
+    : properties[el];
+  })
   const percentageCoef = 101;
   const maxHp = properties.hp;
   const combatHistory = {
@@ -39,11 +54,11 @@ function Fighter(properties) {
 
   this.addLoss = () => {
     combatHistory.losses++;
-  }
+  };
 }
 
 function setWinnerOfBattle(winner, loser) {
-  console.log(`${winner.getName()} has won!`); 
+  console.log(`${winner.getName()} has won!`);
   winner.addWin();
   loser.addLoss();
 }

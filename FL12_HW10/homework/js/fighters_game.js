@@ -7,9 +7,9 @@ function Fighter(properties = {}) {
   properties.hp = properties.hp === undefined || properties.hp <= 0 ? defHp : properties.hp;
   if (properties.name === undefined || fightersNames.has(properties.name)) {
     properties.name = `fighter${numberOfFighter}`;
-    fightersNames.add(properties.name);
     numberOfFighter++;
   }
+  fightersNames.add(properties.name);
   prop.forEach(el => {
     properties[el] = properties[el] <= 0 || properties[el] === undefined ? properties[el] = 10 
     : properties[el];

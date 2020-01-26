@@ -1,3 +1,6 @@
+body {
+  background-color: #bbb;
+}
 * {
   margin: 0;
   padding: 0;
@@ -5,10 +8,131 @@
 }
 h2 {
   text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  background-color: #bbb;
+  padding-bottom: 20px;
 }
 .hide {
   display: none;
 }
 #root {
+  background-color: white;
   margin-top: 25px;
+}
+#root > div {
+  padding-bottom: 130px;
+}
+li, button, input {
+  cursor: pointer;
+}
+.checkbox {
+  margin-top: 25px;
+  transform:scale(1.75);
+  opacity:0.9;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+}
+li {
+  margin: auto;
+  width: 1325px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.li-text {
+  display: flex;
+  margin-left: 30px;
+  justify-content: space-between;
+  width: 1150px;
+}
+.li-text > p {
+  font-size: 25px;
+  width: 550px;
+  border-bottom: solid 1.5px rgb(202, 147, 28);
+}
+.new-set {
+  margin: auto;
+  margin-top: 30px;
+  display: block;
+  color: #333;
+  background-color: #e7e7e7;
+  font-size: 20px;
+  padding: 7px;
+  border: solid 1px #aaa;
+  box-shadow: 0 0 3px #777;
+  border-radius: 8px;
+}
+.delate-set {
+  margin: auto;
+  margin-top: 30px;
+  display: block;
+  color: #333;
+  background-color: #e7e7e7;
+  font-size: 15px;
+  padding: 3px 8px;
+  border: solid 1px #aaa;
+  box-shadow: 0 0 3px #777;
+  border-radius: 8px;
+}
+.empty {
+  margin-top: 50px;
+  font-size: 1.1em;
+  text-align: center;
+}
+.completed {
+  order: 1;
+}
+.completed > div > p {
+  border-color: rgb(199, 10, 10);
+  background-color: rgba(0, 0, 0, 0.096);
+}
+.input-block {
+  margin: auto;
+  margin-top: 110px;
+  display: flex;
+  justify-content: space-between;
+  width: 1175px;
+  padding-right: 67px;
+
+}
+.input-block > input {
+  display: block;
+  width: 550px;
+  font-size: 25px;
+  border: 0;
+  border-bottom: solid 1.5px rgb(202, 147, 28);
+}
+.input-block > input:focus {
+  outline: 0;
+  outline-offset: 0;
+  border-bottom: solid 1.5px rgb(28, 202, 193);
+}
+.button-block {
+  width: 625px;
+  padding-right: 67px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.button-block > button {
+  width: 270px;
+  margin: auto;
+  margin-top: 30px;
+  display: block;
+  color: #333;
+  background-color: #e7e7e7;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  border: solid 1px #aaa;
+  box-shadow: 0 0 3px #777;
+  border-radius: 13px;
+}
+button:hover {
+  background-color: #d1d1d1;
 }

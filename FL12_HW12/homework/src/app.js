@@ -155,12 +155,8 @@ root.addEventListener('click', e => {
     window.location.hash = `#/modify/:item_id-${currentTerm}`;
   }
   if (e.target.classList.contains('checkbox')) {
-    if (e.target.hasAttribute('checked')) {
-      e.target.removeAttribute('checked');
-    } else {
-      e.target.setAttribute('checked', 'checked');
-      e.target.parentElement.parentElement.append(e.target.parentElement);
-    }
+    e.target.hasAttribute('checked') ? e.target.removeAttribute('checked') : 
+    e.target.setAttribute('checked', 'checked');
     e.target.parentElement.classList.toggle('completed');
   }
   if (e.target.classList.contains('save-changes')) {
@@ -171,7 +167,7 @@ root.addEventListener('click', e => {
   }
   if ([...namesOfSets].length === zeroNumb && showEmpty.classList.contains('hide')) {
     showEmpty.classList.remove('hide');
-  } else {
+  } else if ([...namesOfSets].length > zeroNumb && !showEmpty.classList.contains('hide')) {
     showEmpty.classList.add('hide');
   }
   localStorage.setItem('namesOfSets', JSON.stringify([...namesOfSets]));
@@ -187,7 +183,7 @@ for (let i = 0; i < inputs.length; i++) {
       saveExistingItem();
       if ([...namesOfSets].length === zeroNumb && showEmpty.classList.contains('hide')) {
         showEmpty.classList.remove('hide');
-      } else {
+      } else if ([...namesOfSets].length > zeroNumb && !showEmpty.classList.contains('hide')) {
         showEmpty.classList.add('hide');
       }
       localStorage.setItem('namesOfSets', JSON.stringify([...namesOfSets]));

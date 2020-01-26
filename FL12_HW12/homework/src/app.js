@@ -57,22 +57,23 @@ function createNewSet(term, def) {
   list.append(li);
 }
 
-function saveNewItem() {
-  namesOfSets.delete(changingTerm.textContent);
-  if (!namesOfSets.has(inputChangingTerm.value) && inputChangingTerm.value !== '' && 
-  inputChangingDef.value !== '' && (inputChangingTerm.value !== currentTerm || 
-  inputChangingDef.value !== currentDef)) {
-    changingTerm.textContent = inputChangingTerm.value;
-    changingDef.textContent = inputChangingDef.value;
-    namesOfSets.add(inputChangingTerm.value);
-    inputChangingTerm.value = inputChangingDef.value = '';
-    window.location.hash = '#/';
-  } else {
-    namesOfSets.add(changingTerm.textContent);
+function saveExistingItem() {
+  if (inputChangingTerm.value !== '' && inputChangingDef.value !== '' && 
+  (inputChangingTerm.value !== currentTerm || inputChangingDef.value !== currentDef)) {
+    namesOfSets.delete(changingTerm.textContent);
+    if (!namesOfSets.has(inputChangingTerm.value)) {
+      changingTerm.textContent = inputChangingTerm.value;
+      changingDef.textContent = inputChangingDef.value;
+      namesOfSets.add(inputChangingTerm.value);
+      inputChangingTerm.value = inputChangingDef.value = '';
+      window.location.hash = '#/';
+    } else {
+      namesOfSets.add(changingTerm.textContent);
+    }
   }
 }
 
-function saveExistingItem() {
+function saveNewItem() {
   if (!namesOfSets.has(inputNewTerm.value) && inputNewTerm.value !== '' && inputNewDefinition.value !== '') {
     createNewSet(inputNewTerm.value, inputNewDefinition.value);
     namesOfSets.add(inputNewTerm.value)
@@ -159,10 +160,10 @@ root.addEventListener('click', e => {
     e.target.setAttribute('checked', 'checked');
     e.target.parentElement.classList.toggle('completed');
   }
-  if (e.target.classList.contains('save-changes')) {
+  if (e.target.classList.contains('save')) {
     saveNewItem();
   }
-  if (e.target.classList.contains('save')) {
+  if (e.target.classList.contains('save-changes')) {
     saveExistingItem();
   }
   if ([...namesOfSets].length === zeroNumb && showEmpty.classList.contains('hide')) {

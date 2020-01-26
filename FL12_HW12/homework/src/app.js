@@ -1,60 +1,36 @@
 function checkLocation() {
   if (window.location.hash === '#/add') {
-    openAddPage();  
+    openAnotherPage(addBlock, changeItemBlock, mainBlock);  
   } else if (window.location.hash.startsWith('#/modify/:item_id-')) {
-    openModifyItemPage();  
+    openAnotherPage(changeItemBlock, mainBlock, addBlock);
   } else if (window.location.hash === '#/' || window.location.hash === '') {
-    openMainPage();
+    openAnotherPage(mainBlock, addBlock, changeItemBlock);
   }
 }
 
-function openMainPage() {
-  if (mainBlock.classList.contains('hide')) {
-    mainBlock.classList.remove('hide');
+function openAnotherPage(show, hide1, hide2) {
+  if (show.classList.contains('hide')) {
+    show.classList.remove('hide');
   }
-  if (!addBlock.classList.contains('hide')) {
-    addBlock.classList.add('hide');
+  if (!hide1.classList.contains('hide')) {
+    hide1.classList.add('hide');
   }
-  if (!changeItemBlock.classList.contains('hide')) {
-    changeItemBlock.classList.add('hide');
-  }
-}
-
-function openAddPage() {
-  if (!mainBlock.classList.contains('hide')) {
-    mainBlock.classList.add('hide');
-  }
-  if (addBlock.classList.contains('hide')) {
-    addBlock.classList.remove('hide');
-  }
-  if (!changeItemBlock.classList.contains('hide')) {
-    changeItemBlock.classList.add('hide');
-  }
-}
-
-function openModifyItemPage() {
-  if (!mainBlock.classList.contains('hide')) {
-    mainBlock.classList.add('hide');
-  }
-  if (!addBlock.classList.contains('hide')) {
-    addBlock.classList.add('hide');
-  }
-  if (changeItemBlock.classList.contains('hide')) {
-    changeItemBlock.classList.remove('hide');
+  if (!hide2.classList.contains('hide')) {
+    hide2.classList.add('hide');
   }
 }
 
 function createNewSet(term, def) {
-  const li = document.createElement('li');
-  li.innerHTML = `
-    <input type="checkbox" class="checkbox">
-    <div class="li-text">
-      <p class="change-set">${term}</p>
-      <p class="change-set">${def}</p>
-    </div>
-    <button class="delate-set">remove</button>
-  `;
-  list.append(li);
+  list.insertAdjacentHTML('afterbegin', `
+    <li>
+      <input type="checkbox" class="checkbox">
+      <div class="li-text">
+        <p class="change-set">${term}</p>
+        <p class="change-set">${def}</p>
+      </div>
+      <button class="delate-set">remove</button>
+    </li>
+  `); 
 }
 
 function saveExistingItem() {
@@ -83,8 +59,8 @@ function saveNewItem() {
 }
 
 const setsList = localStorage.getItem('sets') ? localStorage.getItem('sets') : '';
-const namesOfSets = localStorage.getItem('namesOfSets') ? new Set(JSON.parse(localStorage.getItem('namesOfSets'))) : 
-new Set();
+const namesOfSets = localStorage.getItem('namesOfSets') ? 
+new Set(JSON.parse(localStorage.getItem('namesOfSets'))) : new Set();
 const root = document.getElementById('root');
 root.innerHTML = `
   <div id="main-block" class="hide"></div>

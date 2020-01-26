@@ -96,8 +96,10 @@ mainBlock.innerHTML = `
   <h2>Main page</h2>
   <button class="new-set">Add new set</button>
   <ul id="list">${setsList}</ul>
+  <p class="empty ${setsList ? 'hide' : ''}">List is empty</p>
 `;
 const list = document.getElementById('list');
+const showEmpty = document.querySelector('.empty');
 const addBlock = document.getElementById('add-block');
 addBlock.innerHTML = `
   <h2>Add new set</h2>
@@ -127,6 +129,7 @@ changeItemBlock.innerHTML = `
 const inputChangingTerm = document.getElementById('changeTerm');
 const inputChangingDef = document.getElementById('changeDefinition');
 let changingItem, changingTerm, changingDef, currentTerm, currentDef, index;
+const zeroNumb = 0;
 
 checkLocation();
 root.addEventListener('click', e => {
@@ -152,8 +155,12 @@ root.addEventListener('click', e => {
     window.location.hash = `#/modify/:item_id-${currentTerm}`;
   }
   if (e.target.classList.contains('checkbox')) {
-    e.target.hasAttribute('checked') ? e.target.removeAttribute('checked') : 
-    e.target.setAttribute('checked', 'checked');
+    if (e.target.hasAttribute('checked')) {
+      e.target.removeAttribute('checked');
+    } else {
+      e.target.setAttribute('checked', 'checked');
+      e.target.parentElement.parentElement.append(e.target.parentElement);
+    }
     e.target.parentElement.classList.toggle('completed');
   }
   if (e.target.classList.contains('save-changes')) {
@@ -161,6 +168,11 @@ root.addEventListener('click', e => {
   }
   if (e.target.classList.contains('save')) {
     saveExistingItem();
+  }
+  if ([...namesOfSets].length === zeroNumb && showEmpty.classList.contains('hide')) {
+    showEmpty.classList.remove('hide');
+  } else {
+    showEmpty.classList.add('hide');
   }
   localStorage.setItem('namesOfSets', JSON.stringify([...namesOfSets]));
   localStorage.setItem('sets', list.innerHTML);
@@ -173,6 +185,11 @@ for (let i = 0; i < inputs.length; i++) {
     if (e.keyCode === enterKeyNumber) {
       saveNewItem();
       saveExistingItem();
+      if ([...namesOfSets].length === zeroNumb && showEmpty.classList.contains('hide')) {
+        showEmpty.classList.remove('hide');
+      } else {
+        showEmpty.classList.add('hide');
+      }
       localStorage.setItem('namesOfSets', JSON.stringify([...namesOfSets]));
       localStorage.setItem('sets', list.innerHTML);
     }

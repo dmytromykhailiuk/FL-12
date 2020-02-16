@@ -1,10 +1,10 @@
 @import "_variables.less";
 
-.wraper {
+.main__wraper {
   width: 1020px;
   margin: auto;
 }
-.wraper-header {
+.header__wraper {
   width: 1020px;
   margin: auto;
 }
@@ -48,25 +48,25 @@
   text-align: center;
   border-width: 2px;
   border-style: solid;
-  figure {
+  .class__figure {
     margin: 0;
   }
-  figcaption {
+  .class__title {
     padding: 10px 0 10px 0;
   }
-  &.class__red {
+  &.class--red {
     border-color: @red;
     background-color: @red;
   }
-  &.class__blue {
+  &.class--blue {
     border-color: @blue;
     background-color: @blue;
   }
-  &.class__orange {
+  &.class--orange {
     border-color: @orange;
     background-color: @orange;
   }
-  &.class__green {
+  &.class--green {
     border-color: @green;
     background-color: @green;
   }
@@ -100,7 +100,7 @@
         }
       }
       .nav-link {
-        height: 61px;
+        height: 62px;
         padding-top: 19px;
         padding-left: 20px;
         padding-right: 20px;
@@ -114,10 +114,10 @@
   }
 }
 @media screen and (max-width: 1199.98px ) {
-  .wraper {
+  .main__wraper {
     width: 85%;
   }
-  .wraper-header {
+  .header__wraper {
     width: 85%;
   }
   .title {
@@ -194,11 +194,11 @@
 }
 
 @media screen and (max-width: 767.98px ) {
-  .wraper {
+  .main__wraper {
     width: 100%;
     margin: auto;
   }
-  .wraper-header {
+  .header__wraper {
     width: 95%;
     margin: auto;
   }

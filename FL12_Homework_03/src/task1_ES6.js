@@ -4,7 +4,7 @@ class Deck {
       const arr = [];
       for (let i = 0; i < 4; i++) {
         for (let b = 1; b <= 13; b++) {
-          arr.push(new Card(Card.suits[i], b));
+          arr.push(new Card(Card.suits()[i], b));
         }
       }
       return arr;
@@ -43,7 +43,7 @@ class Card {
     return { 1: 'Ace', 11: 'Jack', 12: 'Queen', 13: 'King' };
   };
 
-  static suits = ['hearts', 'diamonds', 'clubs', 'spades'];
+  static suits() { return ['hearts', 'diamonds', 'clubs', 'spades']};
  
   get isFaceCard() {
     return this.rank === 1 || this.rank > 10 ? true : false;
@@ -97,6 +97,7 @@ class Player {
         player2._numOfWins = player2._numOfWins + 1;
       }
     }
+    console.log(`Score ${player1.wins} : ${player2.wins}`);
     if (player1.wins === player2.wins) {
       console.log('Two players scored the same number of points');
       

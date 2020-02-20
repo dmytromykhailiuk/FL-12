@@ -1,4 +1,4 @@
-class Desk {
+class Deck {
   constructor() {
     this.cards = (() => {
       const arr = [];
@@ -17,7 +17,7 @@ class Desk {
 
   shuffle() {
     let j, temp;
-	  for(let i = this.cards.length - 1; i > 0; i--){
+	  for (let i = this.cards.length - 1; i > 0; i--) {
 	  	j = Math.floor(Math.random()*(i + 1));
 	  	temp = this.cards[j];
 	  	this.cards[j] = this.cards[i];
@@ -27,8 +27,9 @@ class Desk {
 
   draw(n) {
     const num = n > this.cards.length ? this.cards.length : n;
+    const outputCards = this.cards.slice(-num);
     this.cards = this.cards.slice(0, -num);
-    return this.cards.slice(-num);
+    return outputCards;
   }
 }
 
@@ -57,22 +58,54 @@ class Card {
     return `${this._rankName} of ${this.suit}`;
   }
 
-  compare(card1, card2) {
-    return card1 > card2;
+  static compare(card1, card2) {
+    if (card1[0].rank === card2[0].rank) {
+      return `${card1.toString()} and ${card2.toString()} are equal`;
+    } else if (card1[0].rank > card2[0].rank) {
+      return `${card1.toString()} is greater than ${card2.toString()}`;
+    } else {
+      return `${card1.toString()} is less than ${card2.toString()}`;
+    }
   }
 }
 
 class Player {
-  constructor(name, desk) {
+  constructor(name) {
     this.name = name;
-    this.wins = 0;
-    this.deck = desk;
+    this._numOfWins = 0;
+    this.deck = (() => {
+      const newDeck = new Deck();
+      newDeck.shuffle();
+      return newDeck;
+    })();
   }
 
-  play(player1, player2) {
+  get wins() {
+    return this._numOfWins;
+  }
 
+  static play(player1, player2) {
+    let rezOfCompare;
+    while (player1.deck.count > 0) {
+      rezOfCompare = Card.compare(player1.deck.draw(1), player2.deck.draw(1));
+      console.log(rezOfCompare);
+      if (rezOfCompare.includes('greater')) {
+        console.log(`So, ${player1.name} wins in this round`);
+        player1._numOfWins = player1._numOfWins + 1;
+      } else if(rezOfCompare.includes('less')) {
+        console.log(`So, ${player2.name} wins in this round`);
+        player2._numOfWins = player2._numOfWins + 1;
+      }
+    }
+    if (player1.wins === player2.wins) {
+      console.log('Two players scored the same number of points');
+      
+    }
+    const winner = player1.wins > player2.wins ? player1.name : player2.name;
+    console.log(`${winner} wins in the Game`); 
   }
 }
 
-let desk1 = new Desk();
-console.log(desk1.constructor.toString().split(' ')[1]);
+const player1 = new Player('T1');
+const player2 = new Player('K1');
+Player.play(player1, player2);

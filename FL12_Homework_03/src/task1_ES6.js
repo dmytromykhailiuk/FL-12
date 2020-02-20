@@ -107,6 +107,6 @@ class Player {
   }
 }
 
-const player1 = new Player('T1');
-const player2 = new Player('K1');
+const player1 = new Player('Tom');
+const player2 = new Player('Jerry');
 Player.play(player1, player2);

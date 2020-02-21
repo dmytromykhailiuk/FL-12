@@ -48,7 +48,7 @@ function Card(suit, rank) {
     return rankName;
   }
   this.toString = function() {
-    return `${this._rankName()} of ${this.suit}`;
+    return this._rankName() + ' of ' + this.suit;
   }
 }
 

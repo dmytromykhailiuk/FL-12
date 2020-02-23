@@ -148,13 +148,13 @@ function releaseManager(manager) {
   return release;
 }
 
-function demotedManager(manager) {
-  function demoted(emplId, options) {
+function demoteManager(manager) {
+  function demote(emplId, options) {
     const employer = manager.managedEmployees.find((empl) => empl.id === emplId);
     if (!employer) return;
     employer.getDemoted(options);
   }
-  return demoted;
+  return demote;
 }
 
 function managerPro(manager) {
@@ -165,7 +165,7 @@ function managerPro(manager) {
       reviewManager(manager), 
       promoteManager(manager),
       releaseManager(manager),
-      demotedManager(manager)
+      demoteManager(manager)
     );
   }
 }

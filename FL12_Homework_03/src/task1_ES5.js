@@ -1,4 +1,4 @@
-function Deck (){
+function Deck() {
   this.cards = (function() {
     var arr = [];
     for (var i = 0; i < 4; i++) {
@@ -102,7 +102,7 @@ Player.play = function(player1, player2) {
 }
 
 
-const player1 = new Player('Tom');
-const player2 = new Player('Jerry');
+var player1 = new Player('Tom');
+var player2 = new Player('Jerry');
 Player.play(player1, player2);
 

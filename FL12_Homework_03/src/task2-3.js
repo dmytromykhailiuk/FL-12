@@ -7,7 +7,7 @@ class Employee {
     this.salary = salary;
     this.position = position;
     this.department = department;
-    Employee._employees.push(this);
+    Employee._EMPLOYEES.push(this);
   }
 
   get age() {
@@ -21,24 +21,24 @@ class Employee {
     return this.name + ' ' + this.lastName;
   }
 
-  static _employees = [];
+  static _EMPLOYEES = [];
   
-  static get employees() {
-      return this._employees;
+  static get EMPLOYEES() {
+      return Employee._EMPLOYEES;
   } 
 
   quit() {
     let index;
     let isFinded = false;
-    Employee._employees.forEach((el, i) => {
+    Employee._EMPLOYEES.forEach((el, i) => {
       if (el.id === this.id) {
         index = i;
         isFinded = true;
       }
     });
     if (isFinded) {
-      Employee._employees = [
-        ...Employee._employees.slice(0, index), ...Employee._employees.slice(index + 1)
+      Employee._EMPLOYEES = [
+        ...Employee._EMPLOYEES.slice(0, index), ...Employee._EMPLOYEES.slice(index + 1)
       ];
     }
   }
@@ -75,13 +75,13 @@ class Employee {
   getPromoted({
     salary = this.salary, position = this.position, department = this.department
   } = {}) {
-    _helpChangePropsAndGetLog(salary, position, department, 'Yoohooo');
+    this._helpChangePropsAndGetLog(salary, position, department, 'Yoohooo');
   }
 
   getDemoted ({
     salary = this.salary, position = this.position, department = this.department
   } = {}) {
-    _helpChangePropsAndGetLog(salary, position, department, 'Damn!');
+    this._helpChangePropsAndGetLog(salary, position, department, 'Damn!');
   }
 }
 
@@ -92,7 +92,7 @@ class Manager extends Employee {
   }
 
   get managedEmployees() {
-    return Employee.employees.filter(empl => empl.department === this.department && empl.position !== 'manager');
+    return Employee.EMPLOYEES.filter(empl => empl.department === this.department && empl.position !== 'manager');
   }
 }
 
@@ -112,60 +112,94 @@ class SalesManager extends Manager {
   }
 }
 
-function positionManager(manager) {
-  function changePosition(emplId, newPosition) {
-    const employer = manager.managedEmployees.find((empl) => empl.id === emplId);
+const positionManager = {
+  changePosition(emplId, newPosition) {
+    const employer = this.managedEmployees.find((empl) => empl.id === emplId);
     if (!employer) return;
     employer.changeSalary(newPosition);
   }
-  return changePosition;
 }
 
-function reviewManager(manager) {
-  function changeSalary(emplId, newSalary) {
-    const employer = manager.managedEmployees.find((empl) => empl.id === emplId);
+const reviewer = {
+  changeSalary(emplId, newSalary) {
+    const employer = this.managedEmployees.find((empl) => empl.id === emplId);
     if (!employer) return;
     employer.changeSalary(newSalary);
   }
-  return changeSalary;
 }
 
-function promoteManager(manager) {
-  function promote(emplId, options) {
-    const employer = manager.managedEmployees.find((empl) => empl.id === emplId);
+const promoter = {
+  promote(emplId, options) {
+    const employer = this.managedEmployees.find((empl) => empl.id === emplId);
     if (!employer) return;
     employer.getPromoted(options);
   }
-  return promote;
 }
 
-function releaseManager(manager) {
-  function release(emplId) {
-    const employer = manager.managedEmployees.find(empl => empl.id === emplId);
+const releaser = {
+  release(emplId) {
+    const employer = this.managedEmployees.find(empl => empl.id === emplId);
     if (!employer) return;
     employer.getFired();
   }
-  return release;
 }
 
-function demoteManager(manager) {
-  function demote(emplId, options) {
-    const employer = manager.managedEmployees.find((empl) => empl.id === emplId);
+const demoteManager = {
+  demote(emplId, options) {
+    const employer = this.managedEmployees.find((empl) => empl.id === emplId);
     if (!employer) return;
     employer.getDemoted(options);
   }
-  return demote;
 }
 
-function managerPro(manager) {
+function managerPro(manager, ...opportunities) {
   if(manager instanceof Manager) {
-    return Object.assign(
-      manager,
-      positionManager(manager),
-      reviewManager(manager), 
-      promoteManager(manager),
-      releaseManager(manager),
-      demoteManager(manager)
-    );
+    return Object.assign(manager, ...opportunities);
   }
 }
+
+// ------ EXAMPLE ------ //
+
+const worker1 = new Employee({
+  id: 1,
+  firstName: 'Ivan',
+  lastName: 'Ivanov',
+  birthday: '08/07/1977',
+  salary: 700,
+  position: 'junior',
+  department: 'web'
+})
+
+const worker2 = new BlueCollarWorker({
+  id: 2,
+  firstName: 'Petro',
+  lastName: 'Petrov',
+  birthday: '09/01/1996',
+  salary: 3000,
+  position: 'senior',
+  department: 'web'
+})
+
+const manager1 = new Manager({
+  id: 3,
+  firstName: 'Stepan',
+  lastName: 'Styopochkin',
+  birthday: '11/11/1990',
+  salary: 1000,
+  department: 'web'
+})
+
+console.log(Employee.EMPLOYEES);
+
+const manager1Pro = managerPro(
+  manager1, positionManager, reviewer, promoter, releaser, demoteManager
+);
+
+console.log(worker1);
+
+manager1Pro.promote(worker1.id, {
+  salary: 1800,
+  position: 'middle'
+})
+
+console.log(worker1);

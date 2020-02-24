@@ -1,22 +1,38 @@
+
+// Task - 1
+
 const maxElement = arr => Math.max(...arr);
+
+// Task - 2
 
 const copiedArray = arr => [...arr];
 
+// Task - 3
+
 const addUniquedId = ({...obj}) => ({...obj, id: Symbol()});
+
+// Task - 4
 
 const regroupObject = obj => {
   const { name, details: { id, age, university } } = obj;
   return { university: university, user: { age: age, firstName: name, id: id } };
 };
 
+// Task - 5
+
 const findUniqueElements = arr => Array.from(new Set(arr));
 
-const hideNumber = str => str.split('').map((el, i) => str.length - i < 5 ? el : '*').join('');
+// Task - 6
 
-const add = (...arr) => {
-  if (arr.length > 1) return arr[0] + arr[1];
-  throw new Error('Missing Property');
-};
+const hideNumber = str => '****'.padStart(str.length, str);
+
+// Task - 7
+
+const throwError = () => { throw new Error('Missing Property') }
+
+const add = (a = throwError(), b = throwError()) => a + b;
+
+// Task - 8
 
 const getNameUsingPromise = () => {
   fetch('https://jsonplaceholder.typicode.com/users')
@@ -25,6 +41,8 @@ const getNameUsingPromise = () => {
     .then(repozList => { console.log(repozList) })
     .catch(e => console.error(e));
 };
+
+// Task - 9
 
 const getNameUsingAsync = async () => {
   try {

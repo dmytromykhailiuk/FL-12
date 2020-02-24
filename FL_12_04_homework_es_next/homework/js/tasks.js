@@ -24,7 +24,7 @@ const findUniqueElements = arr => Array.from(new Set(arr));
 
 // Task - 6
 
-const hideNumber = str => '****'.padStart(str.length, str);
+const hideNumber = str => str.slice(-4).padStart(str.length, '*');
 
 // Task - 7
 

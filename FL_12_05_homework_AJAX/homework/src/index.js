@@ -14,7 +14,7 @@ helpingSpinerEl.innerHTML = `
     <div></div>
   </div>
 `;
-let userName;
+let userNames = [];
 
 const showLoader = () => {
   spinner.classList.add(spinnerClassName);
@@ -156,7 +156,10 @@ const openUserPosts = async userId => {
       </div>`
     ).join('');
   listItems && (await hideLoader());
-  return `<h1 class="text-center">Posts of ${name}</h1><div>${listItems}</div>`;
+  return `
+    <h1 class="text-center">Posts of ${name}</h1>
+    <div class="user__posts">${listItems}</div>
+  `;
 };
 
 const routes = {
@@ -182,7 +185,7 @@ const router = async () => {
 
   let list = document.querySelector('.users__list')
   let image = document.querySelectorAll('.user__image');
-  const btnSave = document.querySelectorAll('.user__btn--save')[0];
+  let btmSave = document.querySelector('user__btn--save')
 
   const href = [];
   for (let i = 1; i <= image.length; i++) {
@@ -229,9 +232,9 @@ const router = async () => {
         <button class="user__btn--cancel">Cancle</button>
       `;
       const description = node.querySelector('.user__name');
-      userName = description.textContent;
+      userNames[node.getAttribute('id') - 1] = description.textContent;
       description.innerHTML = `
-        <input class="input" type=text value='${description.textContent}'/>
+        <input class="input" type=text placeholder="Enter users name" value='${description.textContent}'/>
       `;
       description.classList.remove('user__name');
     }
@@ -243,15 +246,17 @@ const router = async () => {
       const userId = node.getAttribute('id');
       const userNameElem = node.querySelector('input').parentElement;
       const val = node.querySelector('input').value;
-      userNameElem.innerHTML = val;
-      userNameElem.classList.add('user__name');
-      const btns = e.target.parentElement;
-      btns.innerHTML = `
-        <button class="user__btn--modify">Modify</button>
-        <button class="user__btn--remove">Delete</button>
-      `;
-      if (val !== userName) {
-        await modifyData(userId, `name:${val}`);
+      if (val !== '') {
+        userNameElem.innerHTML = val;
+        userNameElem.classList.add('user__name');
+        const btns = e.target.parentElement;
+        btns.innerHTML = `
+          <button class="user__btn--modify">Modify</button>
+          <button class="user__btn--remove">Delete</button>
+        `;
+        if (val !== userNames[userId - 1]) {
+          await modifyData(userId, `name:${val}`);
+        }
       }
     }
   };
@@ -262,7 +267,7 @@ const router = async () => {
       const description = node.firstElementChild;
       const btn = e.target;
       const prevBtn = btn.previousElementSibling;
-      description.innerHTML = userName;
+      description.innerHTML = userNames[node.parentElement.getAttribute('id') - 1];
       description.classList.add('user__name');
       prevBtn.innerText = 'Modify';
       prevBtn.classList.add('user__btn--modify');
@@ -278,7 +283,7 @@ const router = async () => {
   list && list.addEventListener('click', modify);
   list && list.addEventListener('click', save);
   list && list.addEventListener('click', cancel);
-  btnSave && btnSave.addEventListener('click', handlerbtnSave);
+  btmSave && btmSave.addEventListener('click', handlerbtnSave);
 };
 
 window.addEventListener('load', router);

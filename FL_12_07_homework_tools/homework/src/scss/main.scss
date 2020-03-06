@@ -1,5 +1,141 @@
-$bodyColor: coral;
+@mixin btn-mixin() {
+  display: block;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+  &:active, &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: #cecece;
+  }
+}
 
-body {
-  background-color: $bodyColor;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+
+header {
+  margin: 0;
+  text-align: center;
+  background-color: #121221;
+  color: white;
+  padding-bottom: 2vw;
+  
+  & > h1 {
+    padding-top: 1.7vw;
+    font-size: 3.5vw;
+  }
+  & > p {
+    padding-top: 2vw;
+    font-size: 1.5vw;
+  }
+}
+
+.btn-starn-game {
+  width: 20vw;
+  height: 4vw;
+  margin: auto;
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+  font-size: 1.5vw;
+  border-radius: 2vw;
+  @include btn-mixin();
+}
+
+div#score {
+  width: 90%;
+  margin: auto;
+  margin-top: 25px;
+  font-size: 1.7vw;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  & > div {
+    width: 70px;
+    & > p {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#main {
+  margin: auto;
+  width: 80%;
+}
+
+.main-game-panel {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    width: 36.8%;
+    height: 15vw;
+    border: 2px solid black;
+  }
+}
+
+.btn-chose-panel {
+  display: flex;
+  justify-content: space-evenly;
+  width: 41.25%;
+  & > button {
+    width: 27%;
+    font-size: 1vw;
+    height: 2vw;
+    border-radius: 1vw;
+    @include btn-mixin();
+  }
+}
+
+#winner-panel {
+  text-align: center;
+  font-size: 5vw;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+}
+
+#second-player{
+  position: relative;
+  img{
+    position: absolute;
+    width: 80%;
+    right: 0;
+    bottom: 20%;
+    transform: scale(-1, 1);
+  }
+}
+
+#first-player{
+  position: relative;
+  img{
+    position: absolute;
+    width: 80%;
+    left: 0;
+    bottom: 20%;
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #121221;
+  color: white;
+  text-align: center;
+  font-size: 1.5vw;
+  padding-top: 30px;;
+}
+
+.hide {
+  display: none !important;
 }

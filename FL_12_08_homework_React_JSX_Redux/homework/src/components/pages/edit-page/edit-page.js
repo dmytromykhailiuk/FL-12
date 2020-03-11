@@ -3,7 +3,7 @@ import './edit-pade.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ErrorIndicator from '../../error-indicator/';
-import { saveChanging, onInputChange, changeCourse, clearFields, undoChanges } from '../../../actions';
+import { saveChanging, onInputChange, changeCourse, clearFields } from '../../../actions';
 
 class EditPage extends Component{
 
@@ -18,7 +18,7 @@ class EditPage extends Component{
  render() {
 
   const {
-    itemId, saveChanging, onInputChange, title, description, duration, authors, date, renderLink, undoChanges
+    itemId, saveChanging, onInputChange, title, description, duration, authors, date, renderLink
   } = this.props;
 
   if (itemId !== undefined && title === '') {
@@ -28,8 +28,8 @@ class EditPage extends Component{
   }
 
   const dateValue = (() => {
-      if (date.split('-')[1] === undefined)  return '';
-      return (`${date.split('-')[2]}.${date.split('-')[1]}.${date.split('-')[0].slice(2, 4)}`);
+    if (date.split('-')[1] === undefined)  return '';
+    return (`${date.split('-')[2]}.${date.split('-')[1]}.${date.split('-')[0].slice(2, 4)}`);
   })();
 
   return (
@@ -82,11 +82,7 @@ class EditPage extends Component{
               onClick={() => saveChanging(itemId)} />
           </Link> 
           <Link to="/">
-            <input 
-              type="button" 
-              value="Cancel" 
-              className='btn-cancel'
-              onClick={undoChanges} />
+            <input type="button" value="Cancel" className='btn-cancel' />
           </Link>
         </div>
       </div>
@@ -100,7 +96,7 @@ const mapStateToProps = ({ title, description, duration, authors, date, renderLi
 };
 
 const mapDispatchToProps = {
-  saveChanging, onInputChange, changeCourse, clearFields, undoChanges
+  saveChanging, onInputChange, changeCourse, clearFields
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditPage);

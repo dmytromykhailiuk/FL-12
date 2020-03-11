@@ -155,14 +155,9 @@ const reducer = (state = initialState, action) => {
         duration: '',
         authors: '',
         date: '',
+        changing: false,
         renderLink: false,
         searchingVal: ''
-      };
-
-    case 'UNDO_CHANGES':
-      return {
-        ...state,
-        changing: false
       };
 
     default:

@@ -159,6 +159,12 @@ const reducer = (state = initialState, action) => {
         searchingVal: ''
       };
 
+    case 'UNDO_CHANGES':
+      return {
+        ...state,
+        changing: false
+      };
+
     default:
       return state;
   }

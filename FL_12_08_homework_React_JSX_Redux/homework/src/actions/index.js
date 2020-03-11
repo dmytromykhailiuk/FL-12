@@ -40,11 +40,18 @@ const deleteCourse = (id) => {
   };
 };
 
+const undoChanges = () => {
+  return {
+    type: 'UNDO_CHANGES',
+  };
+};
+
 export {
   toggleMenu,
   onInputChange,
   clearFields,
   saveChanging,
   changeCourse,
-  deleteCourse
+  deleteCourse,
+  undoChanges
 };

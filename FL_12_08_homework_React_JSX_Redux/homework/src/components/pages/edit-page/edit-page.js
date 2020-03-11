@@ -74,7 +74,7 @@ class EditPage extends Component{
         <div className='form__btns'>
           <Link to={renderLink ? "/" : window.location.pathname}> 
             <input
-              type="button"
+              type="submit"
               value="Submit" 
               className='btn-submit'
               onClick={() => saveChanging(itemId)} />

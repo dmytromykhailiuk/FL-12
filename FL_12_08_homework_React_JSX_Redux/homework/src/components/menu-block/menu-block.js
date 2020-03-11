@@ -13,7 +13,7 @@ const MenuBlock = ({ history, id, deleteCourse }) => {
           Edit
         </button>
  
-      <button onClick={() => deleteCourse(id)}>
+      <button onClick={deleteCourse}>
         <img src={deleteIcon} alt="delete icon" />
         Delete
       </button>

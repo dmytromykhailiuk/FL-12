@@ -7,7 +7,7 @@ export default class CourseListItem extends Component {
     const { date, title, description, id, duration, isMenuOpen} = this.props.course;
 
     const menu = isMenuOpen ? 
-                 <MenuBlock id={id} deleteCourse={this.props.deleteCourse} /> 
+                 <MenuBlock id={id} deleteCourse={() => this.props.deleteCourse(id)} /> 
                  : null;
 
     const changeDurationType = (() => {

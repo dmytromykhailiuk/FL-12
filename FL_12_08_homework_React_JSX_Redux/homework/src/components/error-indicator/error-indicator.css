@@ -1,0 +1,12 @@
+.error__indicator {
+  margin-top: 20vh;
+  text-align: center;
+}
+
+.error__indicator h2 {
+  font-size: 80px;
+}
+
+.error__indicator p {
+  font-size: 60px;
+}

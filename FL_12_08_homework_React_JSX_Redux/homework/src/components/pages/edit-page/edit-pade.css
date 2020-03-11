@@ -1,0 +1,140 @@
+form {
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  color: #777;
+}
+
+.form__wraper {
+  width: 60%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.form__wraper h2 {
+  text-align: center;
+  padding-top: 45px;
+  margin-bottom: 45px;
+  color: black;
+}
+
+.new__course__title input, .new__course__desc textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 5px;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  padding-left: 1%;
+  font-size: 20px;
+  color: #777;
+  resize: none
+}
+
+.new__course__desc textarea {
+  height: 80px;
+  padding: 5px 0;
+  padding-left: 1%;
+}
+
+.helping__inputs {
+  width: 101%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.helping__inputs__wraper {
+  width: 50%;
+}
+
+.new__course__duration input, .new__course__authors input {
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 5px;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 20px;
+  color: #777;
+  padding-left: 1%;
+}
+
+.form__btns {
+  display: flex;
+  width: 100%;
+  margin-top: 90px;
+}
+
+.form__btns > *, .form__btns a input {
+  display: block;
+  height: 45px;
+  border-radius: 9px;
+  font-weight: 600;
+  width: 40%;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.form__btns a input {
+  width: 100%;
+}
+
+.btn-submit {
+  background-image: linear-gradient(rgb(73, 228, 218),rgb(15, 170, 218));
+  color: white;
+}
+
+.btn-submit:hover {
+  background-image: linear-gradient(rgb(60, 200, 200),rgb(13, 155, 200));
+}
+
+.form__btns > *:first-child {
+  margin-right: 5%;
+}
+
+.btn-cancel {
+  background-color: white;
+  color: #777;
+}
+
+.btn-cancel:hover {
+  color: #333;
+  box-shadow: 0 0 10px rgba(75, 129, 129, 0.15);
+}
+
+.calendar__wrap {
+  width: 50%;
+  padding-left: 50px;
+}
+
+.calendar__wrap input {
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 5px;
+  height: 45px;
+  border: 1px solid white;
+  border-radius: 7px;
+  font-size: 20px;
+  color: #777;
+  padding-left: 1%;
+}
+
+.calendar__wrap div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar__wrap input:focus {
+  border: 1px solid #ccc;
+}
+
+.prev__date {
+  font-weight: 600;
+  color: rgb(51, 165, 165);
+}

@@ -1,0 +1,107 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  background-color: white;
+  height: 75px;
+  margin-bottom: 7px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: relative;
+  color: #777;
+}
+
+li p {
+  display: flex;
+  align-items: center;
+}
+
+.course__data {
+  width: 11%;
+  padding-left: 35px;
+}
+
+.course__name {
+  width: 18%;
+  font-weight: 600;
+  color: black;
+}
+
+.course__desc {
+  width: 40%;
+}
+
+.course__duration {
+  width: 11%;
+}
+
+li > .menu__btns {
+  width: 7%;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: black;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 7px;
+}
+
+li > .menu__btns:hover {
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  color: black;
+}
+
+.menu__block {
+  width: 19%;
+  height: 60px;
+  position: absolute;
+  background-color: white;
+  right: 2%;
+  top: 67px;
+  z-index: 1;
+  border-radius: 5px;
+  box-shadow: 0 -6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu__block::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 13px solid white;
+  border-left: 26px solid transparent;
+  border-right: 13px solid transparent;
+  top: -10px;
+  right: 7%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.01);
+}
+
+.menu__block > * {
+  margin: 10px;
+  margin-left: 20px;
+  display: block;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.menu__block a button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.menu__block button:hover {
+  color: black;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);;
+}
+
+.menu__block button > img {
+  width: 10px;
+  margin-right: 10px;
+}

@@ -5,32 +5,9 @@ import { connect } from 'react-redux';
 import ErrorIndicator from '../../error-indicator/';
 import { saveChanging, onInputChange, changeCourse, clearFields } from '../../../actions';
 
-class EditPage extends Component{
-
-  componentDidMount() {  
-    if (this.props.itemId) {
-      this.props.changeCourse(this.props.itemId);  
-    } else {
-      this.props.clearFields();
-    }
-  }
-
- render() {
-
-  const {
-    itemId, saveChanging, onInputChange, title, description, duration, authors, date, renderLink
-  } = this.props;
-
-  if (itemId !== undefined && title === '') {
-    return (
-      <ErrorIndicator/>
-    );
-  }
-
-  const dateValue = (() => {
-    if (date.split('-')[1] === undefined)  return '';
-    return (`${date.split('-')[2]}.${date.split('-')[1]}.${date.split('-')[0].slice(2, 4)}`);
-  })();
+const EditPage = ({
+  itemId, saveChanging, onInputChange, title, description, duration, authors, date, renderLink, dateValue
+}) => {
 
   return (
     <form>
@@ -70,7 +47,7 @@ class EditPage extends Component{
             </div>
             <input type='date' id='course__date__val'
                    onChange={(e) => onInputChange('date', e.target.value)} 
-                   value={date} />
+                   value={ date } />
           </div>
         </div>
         <div className='form__btns'>
@@ -88,8 +65,47 @@ class EditPage extends Component{
       </div>
     </form>
   );
-}};
+};
 
+class EditPageContainer extends Component {
+
+  componentDidMount() {  
+    if (this.props.itemId) {
+      this.props.changeCourse(this.props.itemId);  
+    } else {
+      this.props.clearFields();
+    }
+  }
+
+  render() {
+    
+    const {
+      itemId, saveChanging, onInputChange, title, description, duration, authors, date, renderLink
+    } = this.props;
+
+    const dateValue = (() => {
+      if (date.split('-')[1] === undefined)  return '';
+      return (`${date.split('-')[2]}.${date.split('-')[1]}.${date.split('-')[0].slice(2, 4)}`);
+    })();
+
+    const isPageNotFound = itemId !== undefined && title === '';
+
+    const error = <ErrorIndicator/>;
+    const form = <EditPage itemId={itemId}
+                          date={date}
+                          dateValue={dateValue}
+                          saveChanging={saveChanging}
+                          onInputChange={onInputChange}
+                          title={title}
+                          description={description}
+                          duration={duration}
+                          authors={authors}
+                          renderLink={renderLink} />
+
+    return isPageNotFound ? error : form;
+    
+  };
+};
 
 const mapStateToProps = ({ title, description, duration, authors, date, renderLink }) => {
   return { title, description, duration, authors, date, renderLink };
@@ -99,4 +115,4 @@ const mapDispatchToProps = {
   saveChanging, onInputChange, changeCourse, clearFields
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditPage);
+export default connect(mapStateToProps, mapDispatchToProps)(EditPageContainer);

@@ -3,9 +3,6 @@ import CourseListItem from '../course-list-item';
 import { connect } from 'react-redux';
 import { toggleMenu, deleteCourse } from '../../actions';
 
-
-
-
 const CoursesList = ({ courses, searchingVal, toggleMenu, deleteCourse }) => {
 
   return (
@@ -35,6 +32,5 @@ const mapStateToProps = ({ courses, searchingVal }) => {
 const mapDispatchToProps = {
   toggleMenu, deleteCourse
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesList);

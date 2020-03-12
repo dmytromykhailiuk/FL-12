@@ -34,5 +34,4 @@ const mapDispatchToProps = {
   onInputChange
 };
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);

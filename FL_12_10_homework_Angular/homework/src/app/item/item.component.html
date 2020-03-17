@@ -13,7 +13,10 @@
     </div>
   </div>
   <ng-template #isEdit>
-    <form [formGroup]="form" [ngClass]="{invalid: form.invalid || form.pending}">
+    <form 
+      [formGroup]="form" 
+      [ngClass]="{invalid: (form.invalid || form.pending) && form.touched}"
+    >
       <input 
         placeholder="name"
         type="text" 

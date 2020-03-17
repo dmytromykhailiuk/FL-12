@@ -29,6 +29,7 @@ export class AppUsersService {
   };
 
   onAddNewUser() {
+    this.closeEdining();
     this.isAddingNewItem = true;
     this.users.unshift({
       id: this.nextId++,
@@ -85,7 +86,4 @@ export class AppUsersService {
     });
     this.clearFields();
   }
-
-
-
 }

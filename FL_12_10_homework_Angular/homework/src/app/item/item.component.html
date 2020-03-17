@@ -1,0 +1,50 @@
+<li>
+  <div *ngIf='!user.isChanging; else isEdit'>
+    <p class="user-name">{{ user.name }}</p>
+    <p class="user-email">{{ user.email }}</p>
+    <p class="user-phone-number">{{ user.phone }}</p>
+    <div class="btns">
+      <button
+        (click)="appUsersService.onDelete(user.id)"
+      >Delete</button>
+      <button
+        (click)="appUsersService.onEdit(user.id)"
+      >Edit</button>
+    </div>
+  </div>
+  <ng-template #isEdit>
+    <form [formGroup]="form" [ngClass]="{invalid: form.invalid || form.pending}">
+      <input 
+        placeholder="name"
+        type="text" 
+        [value]="user.name" 
+        (input)="appUsersService.onChangeField($event, 'name')" 
+        formControlName="name"
+      >
+      <input 
+        placeholder="email"
+        type="email" 
+        [value]="user.email" 
+        (input)="appUsersService.onChangeField($event, 'email')" 
+        formControlName="email"
+      >
+      <input type="tel" 
+        placeholder="phone"
+        [value]="user.phone" 
+        (input)="appUsersService.onChangeField($event, 'phone')" 
+        formControlName="phone"
+      >
+      <div class="btns">
+        <button 
+          type="submit" 
+          [disabled]="form.invalid || form.pending" 
+          (click)="appUsersService.onSave(user.id)" 
+        >Save</button>
+        <button 
+          type="button" 
+          (click)="appUsersService.onDiscard()"
+        >Discard</button>
+      </div>
+    </form>
+  </ng-template>
+</li>

@@ -1,0 +1,14 @@
+<div class="wraper">
+
+  <header class="header-wraper">
+    <input type="text" id="searching-panel" placeholder="Search" [(ngModel)]="search" >
+    <button type="submit" (click)="appUsersService.onAddNewUser()" [disabled]="appUsersService.isAddingNewItem">Add New User</button>
+  </header>
+  <ul>
+    <app-item
+      *ngFor="let user of appUsersService.users | filter:search" 
+      [user]="user"
+    ></app-item>
+  </ul>
+  
+</div>

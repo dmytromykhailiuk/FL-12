@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  background-color: rgb(194, 205, 209);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wraper {
+  width: 80%;
+  margin: auto;
+}
+
+button {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: normal;
+  border-radius: 8px;
+  background-color: white;
+  color: black;
+  height: 40px;
+}
+
+input {
+  height: 40px;
+  font-size: 20px;
+  padding-left: 10px;
+  border-radius: 8px;
+}
+
+input:active, input:hover, input:focus, 
+button:active, button:hover, button:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+ul {
+  list-style: none;
+}

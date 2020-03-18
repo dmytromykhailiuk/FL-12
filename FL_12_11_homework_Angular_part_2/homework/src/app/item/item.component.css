@@ -1,0 +1,62 @@
+li {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+li > div, li > form {
+  background-color: white;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border: 2px solid white;
+}
+
+p, input {
+  display: block;
+  font-size: 20px;
+  margin-left: 10px;
+  width: 20%;
+}
+
+p {
+  padding-left: 10px;
+  cursor: default;
+}
+
+input {
+  border: 1px solid white;
+  border-bottom: 1px solid rgb(98, 165, 207);
+  border-radius: 0;
+}
+
+input:focus {
+  border-color: rgb(98, 165, 207);
+}
+
+button {
+  border: 1px solid #333;
+  margin-right: 10px;
+  padding: 0 10px;
+}
+
+.btns {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns button {
+  width: 47%;
+}
+
+.btns button:hover {
+  background-color: rgb(221, 221, 221);
+}
+
+.invalid {
+  border-color: red !important;
+}

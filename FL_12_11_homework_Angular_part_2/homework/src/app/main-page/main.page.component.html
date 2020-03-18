@@ -1,0 +1,22 @@
+<div class="wraper">
+
+  <header class="header-wraper">
+    <input 
+      type="text" 
+      id="searching-panel" 
+      placeholder="Search" 
+    >
+    <button 
+      type="submit" 
+      #createnewitem 
+    >Add New User</button>
+  </header>
+  <ul>
+    <!-- | filter:search -->
+    <app-item
+      *ngFor="let user of users " 
+      [user]="user"
+    ></app-item>
+  </ul>
+  
+</div>

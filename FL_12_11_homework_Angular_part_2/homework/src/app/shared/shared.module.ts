@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterPipe } from '../pipes/filter.pipe';
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -8,7 +9,8 @@ import { FilterPipe } from '../pipes/filter.pipe';
     FilterPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     CommonModule,

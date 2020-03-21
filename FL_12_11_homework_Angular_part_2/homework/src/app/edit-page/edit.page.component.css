@@ -10,7 +10,7 @@ input {
   margin-left: 10px;
   border-radius: 17px;
   width: 100%;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 
 p {
@@ -49,7 +49,7 @@ button:hover {
 }
 
 .invalid {
-  border-color: red !important;
+  border-color: red;
 }
 
 h1 {
@@ -84,4 +84,14 @@ p > span {
   color: red;
   font-size: 30px;
   position: absolute;
+}
+
+button[disabled] {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: rgba(51, 51, 51, 0.493);
+  cursor: default;
+}
+
+button[disabled]:hover {
+  background-color: transparent;
 }

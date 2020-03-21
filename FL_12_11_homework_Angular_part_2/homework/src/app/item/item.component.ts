@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import { User } from "../main-page/main.page.component";
+import {Component, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
 import {Router} from '@angular/router';
-import { fromEvent } from 'rxjs';
+import {fromEvent} from 'rxjs';
+import {switchMap} from 'rxjs/operators';
+import {UsersService, User} from '../servises/users.service';
 
 @Component({
   selector: 'app-item',
@@ -11,16 +12,20 @@ import { fromEvent } from 'rxjs';
 export class ItemComponent implements OnInit {
   @Input() user: User
   @ViewChild('edititembtn', {static: true}) editUserBtn: ElementRef;
-  editElement$: any;
+  @ViewChild('deluserbtn', {static: true}) delUserBtn: ElementRef;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public usersService: UsersService) {}
 
   ngOnInit(): void {
     this.router.navigate(['/users']);
-    this.editElement$ =  fromEvent(this.editUserBtn.nativeElement, 'click').subscribe(() => this.router.navigate([`/users/${this.user.id}`]));  
-  }
+    fromEvent(this.editUserBtn.nativeElement, 'click')
+      .subscribe(() => this.router.navigate([`/users/${this.user.id}`]));
 
-  ngOnDestroy(): void {
-    this.editElement$.unsubscribe();
+    fromEvent(this.delUserBtn.nativeElement, 'click')
+      .pipe(switchMap(() => this.usersService.removeUser(this.user.id)))
+      .subscribe(() => {
+        this.usersService.users = this.usersService.users
+          .filter(u => u.id !== this.user.id)
+        })  
   }
 }

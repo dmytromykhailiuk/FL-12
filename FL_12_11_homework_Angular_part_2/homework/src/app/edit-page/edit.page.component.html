@@ -2,29 +2,58 @@
   <h1>User page</h1>
   <div class="arrow" #gobackbtn>🠀</div>
 </header>
-<form>
+<form [formGroup]="form" >
   <label>
     <p>Name<span>*</span></p>
-    <input type="text">
+    <input 
+      type="text" 
+      formControlName="name"
+      [value]="user.name"
+      [class.invalid]="form.get('name').invalid 
+      && form.get('name').touched"
+    >
   </label>
   <label>
     <p>Email<span>*</span></p>
-    <input type="email">
+    <input 
+      type="email" 
+      formControlName="email"
+      [value]="user.email"
+      [class.invalid]="form.get('email').invalid 
+      && form.get('email').touched"
+    >
   </label>
   <label>
     <p>Phone<span>*</span></p>
-    <input type="tel">
+    <input 
+      type="tel" 
+      formControlName="phone"
+      [value]="user.phone"
+      [class.invalid]="form.get('phone').invalid 
+      && form.get('phone').touched"
+    >
   </label>
-  <label>
+  <label formGroupName="address">
     <p>Address</p>
-    <input type="text">
+    <input 
+      type="text" 
+      formControlName="city" 
+      [value]="user.address.city"
+    >
   </label>
   <label>
     <p>Website</p>
-    <input type="text">
+    <input 
+      type="text" 
+      formControlName="website" 
+      [value]="user.website"
+    >
   </label>
   <div class="btns">
-    <button type="submit">Save</button>
+    <button 
+      type="submit" 
+      #savebtn [disabled]="form.invalid || form.pending"
+    >Save</button>
     <button type="button" #cancelbtn>Discard</button>
   </div>
 </form>

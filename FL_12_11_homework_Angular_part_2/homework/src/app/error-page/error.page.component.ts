@@ -1,5 +1,6 @@
-import {Component} from '@angular/core'
-import {Router} from '@angular/router'
+import {Component, ViewChild, ElementRef} from '@angular/core';
+import {Router} from '@angular/router';
+import {fromEvent} from 'rxjs';
 
 @Component({
   selector: 'app-error-page',
@@ -7,9 +8,11 @@ import {Router} from '@angular/router'
   styleUrls: ['./error.page.component.css']
 })
 export class ErrorPageComponent {
+  @ViewChild('gotomainpage', {static: true}) goToMainPage: ElementRef;
   constructor(private router: Router) {}
 
-  goToPostsPage() {
-    this.router.navigate(['/posts'])
+  ngOnInit(): void {
+    fromEvent(this.goToMainPage.nativeElement, 'click')
+      .subscribe(() => this.router.navigate(['/users']));
   }
 }

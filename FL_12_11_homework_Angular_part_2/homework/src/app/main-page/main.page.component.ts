@@ -1,14 +1,8 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
 import {Router} from '@angular/router';
-import { fromEvent } from 'rxjs';
-
-export interface User {
-  id: number
-  name: string
-  email: string
-  phone: string
-  isChanging: boolean
-}
+import {fromEvent} from 'rxjs';
+import {map, debounceTime, distinctUntilChanged} from 'rxjs/operators'
+import {UsersService} from '../servises/users.service';
 
 @Component({
   selector: 'app-main-page',
@@ -16,22 +10,36 @@ export interface User {
   styleUrls: ['./main.page.component.css']
 })
 export class MainPageComponent {
-  users: User[] = [
-    {id: 1, name: 'Beer', email: 'dsadsa@fdfd.com', phone: '434354', isChanging: false},
-    {id: 2, name: 'Bread', email: 'dsadsa@fdfd.com', phone: '54563', isChanging: false},
-    {id: 3, name: 'Javascript', email: 'dsadsa@fdfd.com', phone: '3245234', isChanging: false}
-  ];
   @ViewChild('createnewitem', {static: true}) newUserBtn: ElementRef;
-  createElement$: any;
+  @ViewChild('serchinginput', {static: true}) serchingInput: ElementRef;
+  inputValue: string = '';
+  searchingValue: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public usersService: UsersService) {}
   
   ngOnInit(): void {
     this.router.navigate(['/users']);
-    this.createElement$ =  fromEvent(this.newUserBtn.nativeElement, 'click').subscribe(() => this.router.navigate(['/users/new']));  
-  }
 
-  ngOnDestroy(): void {
-    this.createElement$.unsubscribe();  
+    fromEvent(this.newUserBtn.nativeElement, 'click')
+      .subscribe(() => this.router.navigate(['/users/new']));
+
+    fromEvent(this.serchingInput.nativeElement, 'input')
+      .pipe(
+        map(() => {
+          this.inputValue = event.target['value'];  
+          return event.target['value'];
+        }),
+        debounceTime(700),
+        distinctUntilChanged()
+      )
+      .subscribe(val => this.searchingValue = val);
+
+    this.usersService.fetchUsers()
+      .subscribe(users => {
+        if (users[0]) {
+          this.usersService.newId = users[users.length - 1].id + 1;
+        }
+        this.usersService.users = users;
+      })
   }
 };

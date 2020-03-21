@@ -8,6 +8,11 @@ h3 {
   padding-bottom: 30px;
 }
 
+h2 {
+  font-size: 60px;
+  padding-bottom: 40px;
+}
+
 button {
   font-size: 15px;
   font-weight: 600;

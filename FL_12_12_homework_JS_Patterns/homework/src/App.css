@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+body {
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
+}
+.header button {
+  width: 140px;
+  height: 30px;
+  margin: 0 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: white;
+  color: #282c34;
+  cursor: pointer;
+}
+.header button:active, .header button:focus {
+  outline: none;
+}
+.header button:hover {
+  background-color: rgb(204, 204, 204);
+}
+.header button.active {
+  background-color: rgb(102, 102, 102);
+  color: white;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

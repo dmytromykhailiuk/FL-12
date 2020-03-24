@@ -47,10 +47,10 @@ class App extends React.Component {
 
     switch(this.state.selectedTab){
       case 'Employees':
-        mainContent = <AllEmployeesTab/>
+        mainContent = <AllEmployeesTab users={this.state.users}/>
         break;
       case 'Units':
-        mainContent = <AllUnitsTab/>
+        mainContent = <AllUnitsTab users={this.state.users}/>
         break;
       case 'Warning':
         mainContent = <WarningEmployeesTab/>
@@ -76,12 +76,6 @@ class App extends React.Component {
             onClick={(e) => this.onTab(e, 'Warning')}
           >Warning Employees</button>
         </header>
-
-        {/* <main className="main" >
-          { this.state.users.map((el) => {
-            return <pre key={el.id}> { JSON.stringify(el) } </pre>
-          }) }
-        </main> */}
 
         { mainContent }
 

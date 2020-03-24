@@ -33,3 +33,33 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.main {
+  margin-top: 30px;
+}
+
+.employer {
+  width: 350px;
+  margin: 5px 10px;
+  padding: 10px;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.rm {
+  background-color: rgb(138, 52, 52);
+  box-shadow: none;
+}
+
+.rm h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.employer p {
+  margin: 10px;
+}
+
+ul ul {
+  margin-left: 190px;
+  list-style: none;
+}

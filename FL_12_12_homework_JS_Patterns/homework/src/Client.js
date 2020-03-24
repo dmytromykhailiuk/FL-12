@@ -30,22 +30,24 @@ export default class Client extends React.Component {
     
 
     const start = () => {
-      return buildTree(root);
+      buildTree(root);
     }
+
+    start()
     
     if (this.props.tab === 'all') {
       return (  
-        <ShowAllStrategy data={start()}/>
+        <ShowAllStrategy data={root}/>
       );
     }
     if (this.props.tab === 'units') {
       return (  
-        <ShowUnitsStrategy data={start()} />
+        <ShowUnitsStrategy data={root} />
       );
     }
     if (this.props.tab === 'warnings') {
       return (  
-        <ShowWarningStrategy data={start()} value={''} />
+        <ShowWarningStrategy data={root} value={''} />
       );
     }
   }  

@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
-
-import AllEmployeesTab from './AllEmployeesTab/AllEmployeesTab';
-import AllUnitsTab from './AllUnitsTab/AllUnitsTab';
-import WarningEmployeesTab from './WarningEmployeesTab/WarningEmployeesTab'
+import Client from './Client';
 
 class App extends React.Component {
   componentDidMount() {
@@ -47,13 +44,13 @@ class App extends React.Component {
 
     switch(this.state.selectedTab){
       case 'Employees':
-        mainContent = <AllEmployeesTab users={this.state.users}/>
+        mainContent = <Client data={this.state.users} tab='all' />
         break;
       case 'Units':
-        mainContent = <AllUnitsTab users={this.state.users}/>
+        mainContent = <Client data={this.state.users} tab='units' />
         break;
       case 'Warning':
-        mainContent = <WarningEmployeesTab/>
+        mainContent = <Client data={this.state.users}  tab='warnings'/>
         break;
       default:
         mainContent = '';

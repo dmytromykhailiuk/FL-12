@@ -6,6 +6,8 @@ export default class Strategy extends React.Component {
     if (this.props.type === 'units') {
       return (
         <PoolList
+          data={this.props.data}
+          withChild={true}
           withPoolInfo={true}
           onlyRM={true} 
         />

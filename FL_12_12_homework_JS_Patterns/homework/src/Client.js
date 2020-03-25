@@ -26,8 +26,6 @@ export default class Client extends React.Component {
         }
       })
     };
-    console.log(start());
-    
 
     const start = () => {
       buildTree(root);
@@ -47,7 +45,7 @@ export default class Client extends React.Component {
     }
     if (this.props.tab === 'warnings') {
       return (  
-        <ShowWarningStrategy data={root} value={''} />
+        <ShowWarningStrategy data={root} value={this.props.value} />
       );
     }
   }  

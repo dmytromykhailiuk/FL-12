@@ -6,7 +6,7 @@ export default class ShowWarningStrategy extends React.Component {
     return (
       <Strategy 
         data={ this.props.data.filterPerformance(this.props.value) } 
-        type={ 'warnings' }
+        type='warnings'
       />
     );
   }

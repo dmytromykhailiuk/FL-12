@@ -1,4 +1,4 @@
-import Empoloyer from './Employees';
+import Empoloyer from './Empoloyer';
 
 export default class Composite extends Empoloyer {
   constructor(info) {
@@ -11,17 +11,19 @@ export default class Composite extends Empoloyer {
   }
 
   getInfo() {
-    const salarySum = 0;
-    const dateSum = 0;
-    const performance = {
-      'top': 0,
-      'average': 0,
-      'low': 0
+    let salarySum = 0;
+    let dateSum = 0;
+    let performance = {
+      top: 0,
+      average: 0,
+      low: 0
     }
     this.children.forEach((el) => {
-      salarySum += el.getSalary();
-      dateSum += this.parseDate(el.getLastVacationDate());
-      performance[el.getPerformance()]++;
+      salarySum = salarySum + el.getSalary();
+      if (el.getLastVacationDate() !== undefined) {
+        dateSum += this.parseDate(el.getLastVacationDate());
+      }
+      performance[el.getPerformanse()]++;
     })
     return {
       salary: salarySum / this.children.length,
@@ -30,9 +32,9 @@ export default class Composite extends Empoloyer {
     }
   }
 
-  filterPerf(value) {
+  filterPerformance(value) {
     this.children.forEach((el) => {
-      const filtered = el.filterPerf(value);
+      const filtered = el.filterPerformance(value);
       if (!filtered || filtered.children !== undefined && filtered.children.length === 0) {
         this.removeChild(el)
       }

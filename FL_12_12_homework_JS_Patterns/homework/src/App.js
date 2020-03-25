@@ -16,13 +16,28 @@ class App extends React.Component {
 
   state = {
     users: [],
-    selectedTab: ''
+    selectedTab: '',
+    selectedOption: ''
   }
 
   loadUsers = async () => {
     const res = await fetch(`https://roman4ak.github.io/fe-oop-lab/mocks/epms.json`);
     const body = await res.json();
     return body;
+  }
+
+  onchangeOption = (e, tab) => {
+    if (this.state.selectedOption !== '') {
+      document
+        .getElementById(`${this.state.selectedOption}Option`)
+        .classList.remove('active');
+    }
+    
+    e.target.classList.add('active');
+    
+    this.setState({
+      selectedOption: tab
+    });
   }
 
   onTab = (e, tab) => {
@@ -35,7 +50,8 @@ class App extends React.Component {
     e.target.classList.add('active');
     
     this.setState({
-      selectedTab: tab
+      selectedTab: tab,
+      selectedOption: ''
     });
   }
 
@@ -50,7 +66,7 @@ class App extends React.Component {
         mainContent = <Client data={this.state.users} tab='units' />
         break;
       case 'Warning':
-        mainContent = <Client data={this.state.users}  tab='warnings'/>
+        mainContent = <Client data={this.state.users}  tab='warnings'value={this.state.selectedOption}/>
         break;
       default:
         mainContent = '';
@@ -74,7 +90,27 @@ class App extends React.Component {
           >Warning Employees</button>
         </header>
 
-        { mainContent }
+        { 
+          this.state.selectedTab !== "Warning" ? null :
+          <div className="options">
+            <button 
+              id="lowOption"
+              onClick={(e) => this.onchangeOption(e, 'low')}
+            >Low</button>
+            <button 
+              id="averageOption"
+              onClick={(e) => this.onchangeOption(e, 'average')}
+            >Average</button>
+            <button 
+              id="topOption"
+              onClick={(e) => this.onchangeOption(e, 'top')}
+            >Top</button>
+          </div>
+      
+        }
+
+        { this.state.selectedTab === 'Warning' 
+          && ! this.state.selectedOption ? null : mainContent }
 
       </React.Fragment>
     );

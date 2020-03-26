@@ -7,16 +7,16 @@
 </head>
 <body>
   <header class="game__header">
-    Symbol used for x: ×
-    Symbol used for o: ○
+    <button class="game__start--btn">New game</button>
+    <button class="game__clear--btn">Clear</button>
   </header>
   <main class="game__grid--wraper">
     <div class="game__grid">
+      <div class="game__cell x"></div>
       <div class="game__cell"></div>
       <div class="game__cell"></div>
-      <div class="game__cell"></div>
-      <div class="game__cell"></div>
-      <div class="game__cell"></div>
+      <div class="game__cell o"></div>
+      <div class="game__cell o"></div>
       <div class="game__cell"></div>
       <div class="game__cell"></div>
       <div class="game__cell"></div>
@@ -24,7 +24,8 @@
     </div>
   </main>
   <footer class="game__footer">
-
+    <div class="status__panel">player1(×) - move</div>
+    <div class="game__score">player1 - 0 : 0 - player2</div>
   </footer>
 </body>
 </html>

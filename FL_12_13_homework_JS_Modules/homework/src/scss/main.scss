@@ -7,22 +7,44 @@
 body {
   color: #545454;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   font-family: sans-serif;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(86, 167, 167, 0.411);
+  background-color: rgb(219, 219, 219);
 }
 
 header.game__header {
-  display: block;
-  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
   top: 0;
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color: #1d1d1d;
   margin-bottom: 80px;
+}
+
+header.game__header > button {
+  width: 140px;
+  background-color: #1d1d1d;
+  border: 1px solid rgb(219, 219, 219);
+  font-size: 20px;
+  color: rgb(219, 219, 219);
+  margin: 10px;
+  padding: 3px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+header.game__header > button:hover {
+  background-color: #585858;
+}
+
+button:active, button:focus {
+  outline: none;
 }
 
 .game__grid--wraper {
@@ -45,8 +67,8 @@ header.game__header {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    height: 175px;
-    width: 175px;
+    height: 150px;
+    width: 150px;
   }
   .x, .o {
     cursor: default;
@@ -55,21 +77,29 @@ header.game__header {
   .x::after {
     content: '×';
     font-size: 200px;
+    padding-bottom: 30px;
   }
   
   .o::after {
     content: '○';
     color: #F2EBD3;
     font-size: 225px;
+    padding-bottom: 28px;
   }
 }
 
 footer.game__footer {
-  height: 100px;
+  height: 80px;
   background-color: #1d1d1d;
   width: 100%;
-  position: fixed;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  justify-content: space-evenly;
+  color: rgb(219, 219, 219);
+  position: absolute;
   bottom: 0;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -82,9 +112,11 @@ footer.game__footer {
     }
     .x::after {
       font-size: 150px;
+      padding-bottom: 25px;
     }
     .o::after {
       font-size: 175px;
+      padding-bottom: 20px;
     }
   }
 }
@@ -102,9 +134,11 @@ footer.game__footer {
     }
     .x::after {
       font-size: 100px;
+      padding-bottom: 15px;
     }
     .o::after {
       font-size: 125px;
+      padding-bottom: 15px;
     }
   }
 }

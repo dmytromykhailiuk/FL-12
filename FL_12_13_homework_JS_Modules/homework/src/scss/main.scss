@@ -13,6 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgb(219, 219, 219);
+  user-select: none;
 }
 
 header.game__header {
@@ -66,25 +67,30 @@ button:active, button:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    align-content: center;
     height: 150px;
     width: 150px;
   }
-  .x, .o {
-    cursor: default;
-  }
 
-  .x::after {
-    content: '×';
+  .× {
     font-size: 200px;
-    padding-bottom: 30px;
+    padding-bottom: 28px;
   }
   
-  .o::after {
-    content: '○';
+  .○ {
     color: #F2EBD3;
     font-size: 225px;
     padding-bottom: 28px;
+  }
+
+  .won {
+    color: red;
+  }
+}
+
+.game {
+  .game__cell {
+    cursor: pointer;
   }
 }
 
@@ -110,11 +116,11 @@ footer.game__footer {
       height: 125px;
       width: 125px;
     }
-    .x::after {
+    .× {
       font-size: 150px;
       padding-bottom: 25px;
     }
-    .o::after {
+    .○ {
       font-size: 175px;
       padding-bottom: 20px;
     }
@@ -132,11 +138,11 @@ footer.game__footer {
       height: 80px;
       width: 80px;
     }
-    .x::after {
+    .× {
       font-size: 100px;
       padding-bottom: 15px;
     }
-    .o::after {
+    .○ {
       font-size: 125px;
       padding-bottom: 15px;
     }
